@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace lab1_oop
 {
-    public class Figure
+    public abstract class Figure
     {
-        public void Draw()
-        {
-
-        }
+        public abstract void Draw(Graphics graphics);
+        public abstract void Draw(Graphics graphics, List<Point> points);
+        public virtual int pointCount { get; }
     }
 }
