@@ -13,8 +13,8 @@ namespace lab1_oop
 
         public virtual Figure CreateInstance(List<Point> points)
         {
-            var x = (Figure)MemberwiseClone();
-            x.SetPoints(points);
+            var x = (Figure)MemberwiseClone(); //making copy
+            x.SetPoints(points); //set field points
             return x;
         }
     }

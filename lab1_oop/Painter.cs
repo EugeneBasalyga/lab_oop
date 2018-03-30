@@ -21,7 +21,7 @@ namespace lab1_oop
 
         private void Draw_button_Click(object sender, EventArgs e)
         {
-            //динамически создаём копию фигуры,добавляем её в список, чтобы затем отрисовать
+            //dynamically create a copy of the figure, add it to the list, then draw
             drawList.Add(FigureList.figures[Figure_comboBox.SelectedIndex].CreateInstance(points));
             points.Clear();
             foreach (var tb in tbList)
@@ -47,6 +47,7 @@ namespace lab1_oop
 
         private void Paint_Panel_Paint(object sender, PaintEventArgs e)
         {
+            //draw
             foreach(var fig in drawList)
             {
                 fig.Draw(e.Graphics);
@@ -64,7 +65,8 @@ namespace lab1_oop
 
         private void Paint_Panel_MouseClick(object sender, MouseEventArgs e)
         {
-            if(points.Count < FigureList.figures[Figure_comboBox.SelectedIndex].pointCount)
+            //calculate the coordinates
+            if (points.Count < FigureList.figures[Figure_comboBox.SelectedIndex].pointCount)
             {
                 tbList[points.Count*2].Text = e.Location.X.ToString();
                 tbList[points.Count * 2 + 1].Text = e.Location.Y.ToString();
@@ -75,6 +77,7 @@ namespace lab1_oop
         private void Figure_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             points.Clear();
+            //select new figure
             for (var i = 0; i < tbList.Count; i++)
             {
                 tbList[i].Clear();
@@ -84,6 +87,7 @@ namespace lab1_oop
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            //clear paint
             drawList.Clear();
             Paint_Panel.Invalidate();
         }
