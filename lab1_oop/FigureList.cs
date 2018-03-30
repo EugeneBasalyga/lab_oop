@@ -25,7 +25,7 @@ namespace lab1_oop
             figures.Add(rectangle);
             figures.Add(ellipse);
             figures.Add(circle);
-            figures.Add(rectangle);
+            figures.Add(triangle);
             figures.Add(quadrangle);
         }
     }

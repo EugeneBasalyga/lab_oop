@@ -27,9 +27,21 @@ namespace lab1_oop
             Color = color;
         }
 
+        public override void SetPoints(List<Point> points)
+        {
+            //base.SetPoints(points);
+            if (points.Count == pointCount)
+            {
+                FirstDot = points[0];
+                SecDot = points[1];
+                ThirdDot = points[2];
+                FourthDot = points[3];
+            }
+        }
+
         public override void Draw(Graphics graphics)
         {
-            if (FirstDot.IsEmpty || FirstDot.IsEmpty || FirstDot.IsEmpty || graphics == null)
+            if (FirstDot.IsEmpty || SecDot.IsEmpty || ThirdDot.IsEmpty || FourthDot.IsEmpty || graphics == null)
                 return;
 
 

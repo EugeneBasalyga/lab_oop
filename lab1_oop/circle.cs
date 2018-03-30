@@ -32,6 +32,15 @@ namespace lab1_oop
             Color = color;
         }
 
+        public override void SetPoints(List<Point> points)
+        {
+            if (points.Count == pointCount)
+            {
+                TopLeft = points[0];
+                BottomRight = points[1];
+            }
+        }
+
         public override void Draw(Graphics graphics, List<Point> points)
         {
             if (points[0].IsEmpty || points[1].IsEmpty || graphics == null)

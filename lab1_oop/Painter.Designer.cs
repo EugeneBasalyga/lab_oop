@@ -47,6 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Paint_Panel
@@ -57,7 +58,7 @@
             this.Paint_Panel.Name = "Paint_Panel";
             this.Paint_Panel.Size = new System.Drawing.Size(1067, 510);
             this.Paint_Panel.TabIndex = 0;
-            this.Paint_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.Paint_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Paint_Panel_Paint);
             this.Paint_Panel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Paint_Panel_MouseClick);
             // 
             // Figure_comboBox
@@ -244,11 +245,24 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Y1";
             // 
+            // ClearButton
+            // 
+            this.ClearButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClearButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClearButton.Location = new System.Drawing.Point(427, 516);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(123, 38);
+            this.ClearButton.TabIndex = 19;
+            this.ClearButton.Text = "Очистить";
+            this.ClearButton.UseVisualStyleBackColor = false;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
             // Painter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 632);
+            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox6);
@@ -298,6 +312,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button ClearButton;
     }
 }
 

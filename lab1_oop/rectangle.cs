@@ -12,12 +12,14 @@ namespace lab1_oop
         public Point TopLeft;
         public Point BottomRight;
         public Color Color;
+        public int Width;
 
         public override int pointCount { get { return 2; } }
 
         public Rectangle()
         {
             Color = Color.Black;
+            Width = 1;
         }
 
         public Rectangle(List<Point> points) : this()
@@ -28,6 +30,15 @@ namespace lab1_oop
         public Rectangle(List<Point> points, Color color) : this(points)
         {
             Color = color;
+        }
+
+        public override void SetPoints(List<Point> points)
+        {
+            if (points.Count == pointCount)
+            {
+                TopLeft = points[0];
+                BottomRight = points[1];
+            }
         }
 
         public override void Draw(Graphics graphics, List<Point> points)
@@ -46,10 +57,10 @@ namespace lab1_oop
             if (TopLeft.IsEmpty || BottomRight.IsEmpty || graphics == null)
                 return;
 
-            var brush = new SolidBrush(Color);
+            var pen = new Pen(Color, Width);
             var rect = new System.Drawing.Rectangle(TopLeft.X, TopLeft.Y, BottomRight.X - TopLeft.X, BottomRight.Y - TopLeft.Y);
-            graphics.FillRectangle(brush, rect);
-            brush.Dispose();
+            graphics.DrawRectangle(pen, rect);
+            pen.Dispose();
         }
     }
 }
