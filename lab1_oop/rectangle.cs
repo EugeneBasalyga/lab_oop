@@ -11,7 +11,7 @@ namespace lab1_oop
     {
         public Point TopLeft;
         public Point BottomRight;
-        public Color Color;
+
         public int Width;
 
         public override int pointCount { get { return 2; } }
@@ -56,6 +56,7 @@ namespace lab1_oop
         {
             if (TopLeft.IsEmpty || BottomRight.IsEmpty || graphics == null)
                 return;
+
 
             var pen = new Pen(Color, Width);
             var rect = new System.Drawing.Rectangle(TopLeft.X, TopLeft.Y, BottomRight.X - TopLeft.X, BottomRight.Y - TopLeft.Y);

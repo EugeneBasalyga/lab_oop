@@ -11,7 +11,7 @@ namespace lab1_oop
     {
         public Point Start;
         public Point End;
-        public Color Color;
+
         public float Width;
 
         public override int pointCount { get { return 2; } }

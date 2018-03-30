@@ -8,7 +8,7 @@ namespace lab1_oop
         public Point FirstDot;
         public Point SecDot;
         public Point ThirdDot;
-        public Color Color;
+
         public float Width;
 
         public override int pointCount { get { return 3; } }
@@ -17,7 +17,7 @@ namespace lab1_oop
         {
             Color = Color.Black;
             Width = 1;
-    }
+        }
 
         public Triangle(List<Point> points) : this()
         {

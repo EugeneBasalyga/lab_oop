@@ -12,17 +12,16 @@ namespace lab1_oop
 {
     public partial class Painter : Form
     {
-        protected Rectangle Rect;
-        protected Line Line;
         protected readonly List<TextBox> tbList = new List<TextBox>();
         protected readonly List<Figure> drawList = new List<Figure>();
         protected readonly List<Point> points = new List<Point>();
+        protected readonly List<Color> colorsList = new List<Color>();
 
 
         private void Draw_button_Click(object sender, EventArgs e)
         {
             //dynamically create a copy of the figure, add it to the list, then draw
-            drawList.Add(FigureList.figures[Figure_comboBox.SelectedIndex].CreateInstance(points));
+            drawList.Add(FigureList.figures[Figure_comboBox.SelectedIndex].CreateCopy(points, colorsList[Color_comboBox.SelectedIndex]));
             points.Clear();
             foreach (var tb in tbList)
                 tb.Clear();
@@ -41,7 +40,11 @@ namespace lab1_oop
             tbList.Add(textBox6);
             tbList.Add(textBox4);
             tbList.Add(textBox5);
-
+            colorsList.Add(Color.Black);
+            colorsList.Add(Color.Red);
+            colorsList.Add(Color.Green);
+            colorsList.Add(Color.Yellow);
+            colorsList.Add(Color.Blue);
         }
 
 
@@ -57,6 +60,7 @@ namespace lab1_oop
         private void Painter_Load(object sender, EventArgs e)
         {
             Figure_comboBox.SelectedItem = Figure_comboBox.Items[0];
+            Color_comboBox.SelectedItem = Color_comboBox.Items[0];
             foreach(var tb in tbList)
             {
                 tb.ReadOnly = true;
@@ -90,6 +94,11 @@ namespace lab1_oop
             //clear paint
             drawList.Clear();
             Paint_Panel.Invalidate();
+        }
+
+        private void Color_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,6 +48,8 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ClearButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Color_comboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Paint_Panel
@@ -75,7 +77,7 @@
             "Круг",
             "Треугольник",
             "Четырёхугольник"});
-            this.Figure_comboBox.Location = new System.Drawing.Point(12, 569);
+            this.Figure_comboBox.Location = new System.Drawing.Point(12, 571);
             this.Figure_comboBox.Name = "Figure_comboBox";
             this.Figure_comboBox.Size = new System.Drawing.Size(123, 23);
             this.Figure_comboBox.TabIndex = 1;
@@ -257,11 +259,42 @@
             this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(424, 569);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 15);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Цвет контура :";
+            // 
+            // Color_comboBox
+            // 
+            this.Color_comboBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Color_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Color_comboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Color_comboBox.ForeColor = System.Drawing.Color.Black;
+            this.Color_comboBox.FormattingEnabled = true;
+            this.Color_comboBox.Items.AddRange(new object[] {
+            "Чёрный",
+            "Красный",
+            "Зелёный",
+            "Жёлтый",
+            "Синий"});
+            this.Color_comboBox.Location = new System.Drawing.Point(427, 600);
+            this.Color_comboBox.Name = "Color_comboBox";
+            this.Color_comboBox.Size = new System.Drawing.Size(123, 23);
+            this.Color_comboBox.TabIndex = 21;
+            this.Color_comboBox.SelectedIndexChanged += new System.EventHandler(this.Color_comboBox_SelectedIndexChanged);
+            // 
             // Painter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 632);
+            this.Controls.Add(this.Color_comboBox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
@@ -313,6 +346,8 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox Color_comboBox;
     }
 }
 
