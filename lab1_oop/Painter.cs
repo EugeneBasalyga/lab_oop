@@ -13,10 +13,10 @@ namespace lab1_oop
     public partial class Painter : Form
     {
         protected readonly List<TextBox> tbList = new List<TextBox>();
-        protected readonly List<Figure> drawList = new List<Figure>();
+        protected List<Figure> drawList = new List<Figure>();
         protected readonly List<Point> points = new List<Point>();
         protected readonly List<Color> colorsList = new List<Color>();
-
+        Serialization Picture = new Serialization();
 
         private void Draw_button_Click(object sender, EventArgs e)
         {
@@ -99,6 +99,26 @@ namespace lab1_oop
         private void Color_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void SaveMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.Filter = "All files(*.*) | *.dat";
+            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Picture.Serialize(drawList, saveFileDialog.FileName);
+            }
+        }
+
+        private void OpenMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog.Filter = "All files(*.*) | *.dat";
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                drawList = Picture.Deserialize(openFileDialog.FileName);
+                Paint_Panel.Invalidate();
+            }
         }
     }
 }

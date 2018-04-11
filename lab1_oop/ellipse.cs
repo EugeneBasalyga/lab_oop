@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace lab1_oop
 {
+    [Serializable]
     public class Ellipse : Figure
     {
         public Point TopLeft;

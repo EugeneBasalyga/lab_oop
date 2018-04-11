@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.Paint_Panel = new System.Windows.Forms.Panel();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.SaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Figure_comboBox = new System.Windows.Forms.ComboBox();
             this.Draw_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,18 +52,42 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.Color_comboBox = new System.Windows.Forms.ComboBox();
+            this.OpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.Paint_Panel.SuspendLayout();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // Paint_Panel
             // 
             this.Paint_Panel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Paint_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Paint_Panel.Controls.Add(this.menu);
             this.Paint_Panel.Location = new System.Drawing.Point(0, 0);
             this.Paint_Panel.Name = "Paint_Panel";
             this.Paint_Panel.Size = new System.Drawing.Size(1067, 510);
             this.Paint_Panel.TabIndex = 0;
             this.Paint_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Paint_Panel_Paint);
             this.Paint_Panel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Paint_Panel_MouseClick);
+            // 
+            // menu
+            // 
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveMenuItem,
+            this.OpenMenuItem});
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(1065, 24);
+            this.menu.TabIndex = 0;
+            this.menu.Text = "menuStrip1";
+            // 
+            // SaveMenuItem
+            // 
+            this.SaveMenuItem.Name = "SaveMenuItem";
+            this.SaveMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.SaveMenuItem.Text = "Сохранить";
+            this.SaveMenuItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
             // 
             // Figure_comboBox
             // 
@@ -288,6 +314,17 @@
             this.Color_comboBox.TabIndex = 21;
             this.Color_comboBox.SelectedIndexChanged += new System.EventHandler(this.Color_comboBox_SelectedIndexChanged);
             // 
+            // OpenMenuItem
+            // 
+            this.OpenMenuItem.Name = "OpenMenuItem";
+            this.OpenMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.OpenMenuItem.Text = "Открыть";
+            this.OpenMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
             // Painter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,9 +353,14 @@
             this.Controls.Add(this.Figure_comboBox);
             this.Controls.Add(this.Paint_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menu;
             this.Name = "Painter";
             this.Text = "Paint";
             this.Load += new System.EventHandler(this.Painter_Load);
+            this.Paint_Panel.ResumeLayout(false);
+            this.Paint_Panel.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,6 +390,11 @@
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox Color_comboBox;
+        private System.Windows.Forms.MenuStrip menu;
+        private System.Windows.Forms.ToolStripMenuItem SaveMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 
