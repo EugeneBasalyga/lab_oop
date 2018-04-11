@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 namespace lab1_oop
-{
+{  
     public static class FigureList
     {
         public static Rectangle rectangle = new Rectangle();

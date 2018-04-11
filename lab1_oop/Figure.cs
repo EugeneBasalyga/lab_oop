@@ -16,7 +16,7 @@ namespace lab1_oop
         {
             var x = (Figure)MemberwiseClone(); //making copy
             x.SetPoints(points); //set field points
-            x.Color = color;
+            x.Color = color;  
             return x;
         }
     }

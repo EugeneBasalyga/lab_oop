@@ -34,10 +34,23 @@ namespace lab1_oop
 
         public override void SetPoints(List<Point> points)
         {
+            int tmp;
             if (points.Count == pointCount)
-            {
+            {               
                 TopLeft = points[0];
                 BottomRight = points[1];
+                if (TopLeft.X > BottomRight.X)
+                {
+                    tmp = TopLeft.X;
+                    TopLeft.X = BottomRight.X;
+                    BottomRight.X = tmp;
+                }
+                if (TopLeft.Y > BottomRight.Y)
+                {
+                    tmp = TopLeft.Y;
+                    TopLeft.Y = BottomRight.Y;
+                    BottomRight.Y = tmp;
+                }
             }
         }
 
