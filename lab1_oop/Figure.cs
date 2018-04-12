@@ -18,14 +18,16 @@ namespace lab1_oop
         public abstract void Draw(Graphics graphics, List<Point> points);
         public virtual int pointCount { get; }
         public Color Color;
+        public float Thikness;
 
         public abstract void SetPoints(List<Point> points);
 
-        public virtual Figure CreateCopy(List<Point> points, Color color)
+        public virtual Figure CreateCopy(List<Point> points, Color color, float thikness)
         {
             var x = (Figure)MemberwiseClone(); //making copy
             x.SetPoints(points); //set field points
-            x.Color = color;  
+            x.Color = color;
+            x.Thikness = thikness;
             return x;
         }
     }

@@ -52,10 +52,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.ClearButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.Color_comboBox = new System.Windows.Forms.ComboBox();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.FigureslistBox = new System.Windows.Forms.ListBox();
+            this.ContourcolorDialog = new System.Windows.Forms.ColorDialog();
+            this.ContourColorButton = new System.Windows.Forms.Button();
+            this.ThiknesscomboBox = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.Paint_Panel.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -87,15 +90,15 @@
             // SaveMenuItem
             // 
             this.SaveMenuItem.Name = "SaveMenuItem";
-            this.SaveMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.SaveMenuItem.Text = "Сохранить";
+            this.SaveMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.SaveMenuItem.Text = "Save As";
             this.SaveMenuItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
             // 
             // OpenMenuItem
             // 
             this.OpenMenuItem.Name = "OpenMenuItem";
-            this.OpenMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.OpenMenuItem.Text = "Открыть";
+            this.OpenMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.OpenMenuItem.Text = "Open";
             this.OpenMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
             // 
             // Figure_comboBox
@@ -106,13 +109,13 @@
             this.Figure_comboBox.ForeColor = System.Drawing.Color.Black;
             this.Figure_comboBox.FormattingEnabled = true;
             this.Figure_comboBox.Items.AddRange(new object[] {
-            "Линия",
-            "Прямоугольник",
-            "Эллипс",
-            "Круг",
-            "Треугольник",
-            "Четырёхугольник"});
-            this.Figure_comboBox.Location = new System.Drawing.Point(12, 571);
+            "Line",
+            "Rectangle",
+            "Ellipse",
+            "Circle",
+            "Triangle",
+            "Quadrangle"});
+            this.Figure_comboBox.Location = new System.Drawing.Point(12, 550);
             this.Figure_comboBox.Name = "Figure_comboBox";
             this.Figure_comboBox.Size = new System.Drawing.Size(123, 23);
             this.Figure_comboBox.TabIndex = 1;
@@ -122,11 +125,11 @@
             // 
             this.Draw_button.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Draw_button.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Draw_button.Location = new System.Drawing.Point(12, 516);
+            this.Draw_button.Location = new System.Drawing.Point(12, 506);
             this.Draw_button.Name = "Draw_button";
             this.Draw_button.Size = new System.Drawing.Size(123, 38);
             this.Draw_button.TabIndex = 2;
-            this.Draw_button.Text = "Рисовать";
+            this.Draw_button.Text = "Draw";
             this.Draw_button.UseVisualStyleBackColor = false;
             this.Draw_button.Click += new System.EventHandler(this.Draw_button_Click);
             // 
@@ -209,7 +212,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(347, 600);
+            this.textBox5.Location = new System.Drawing.Point(328, 600);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(47, 22);
             this.textBox5.TabIndex = 18;
@@ -219,7 +222,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(319, 603);
+            this.label5.Location = new System.Drawing.Point(300, 603);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(22, 15);
             this.label5.TabIndex = 17;
@@ -228,7 +231,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(347, 572);
+            this.textBox6.Location = new System.Drawing.Point(328, 572);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(47, 22);
             this.textBox6.TabIndex = 16;
@@ -237,7 +240,7 @@
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.Location = new System.Drawing.Point(347, 544);
+            this.textBox7.Location = new System.Drawing.Point(328, 544);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(47, 22);
             this.textBox7.TabIndex = 15;
@@ -247,7 +250,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(319, 575);
+            this.label6.Location = new System.Drawing.Point(300, 575);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(22, 15);
             this.label6.TabIndex = 14;
@@ -257,7 +260,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(319, 547);
+            this.label7.Location = new System.Drawing.Point(300, 547);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(22, 15);
             this.label7.TabIndex = 13;
@@ -266,7 +269,7 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox8.Location = new System.Drawing.Point(347, 516);
+            this.textBox8.Location = new System.Drawing.Point(328, 516);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(47, 22);
             this.textBox8.TabIndex = 12;
@@ -276,7 +279,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(319, 519);
+            this.label8.Location = new System.Drawing.Point(300, 519);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(22, 15);
             this.label8.TabIndex = 11;
@@ -286,11 +289,11 @@
             // 
             this.ClearButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClearButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ClearButton.Location = new System.Drawing.Point(427, 516);
+            this.ClearButton.Location = new System.Drawing.Point(12, 579);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(123, 38);
             this.ClearButton.TabIndex = 19;
-            this.ClearButton.Text = "Очистить";
+            this.ClearButton.Text = "Clean";
             this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
@@ -298,30 +301,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(424, 569);
+            this.label9.Location = new System.Drawing.Point(413, 516);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 15);
+            this.label9.Size = new System.Drawing.Size(83, 15);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Цвет контура :";
-            // 
-            // Color_comboBox
-            // 
-            this.Color_comboBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Color_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Color_comboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Color_comboBox.ForeColor = System.Drawing.Color.Black;
-            this.Color_comboBox.FormattingEnabled = true;
-            this.Color_comboBox.Items.AddRange(new object[] {
-            "Чёрный",
-            "Красный",
-            "Зелёный",
-            "Жёлтый",
-            "Синий"});
-            this.Color_comboBox.Location = new System.Drawing.Point(427, 600);
-            this.Color_comboBox.Name = "Color_comboBox";
-            this.Color_comboBox.Size = new System.Drawing.Size(123, 23);
-            this.Color_comboBox.TabIndex = 21;
-            this.Color_comboBox.SelectedIndexChanged += new System.EventHandler(this.Color_comboBox_SelectedIndexChanged);
+            this.label9.Text = "Contour color";
             // 
             // openFileDialog
             // 
@@ -342,13 +326,55 @@
             this.FigureslistBox.Click += new System.EventHandler(this.FigureslistBox_Click);
             this.FigureslistBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FigureslistBox_KeyPress);
             // 
+            // ContourColorButton
+            // 
+            this.ContourColorButton.Location = new System.Drawing.Point(416, 543);
+            this.ContourColorButton.Name = "ContourColorButton";
+            this.ContourColorButton.Size = new System.Drawing.Size(75, 23);
+            this.ContourColorButton.TabIndex = 22;
+            this.ContourColorButton.UseVisualStyleBackColor = true;
+            this.ContourColorButton.Click += new System.EventHandler(this.ContourColorButton_Click);
+            // 
+            // ThiknesscomboBox
+            // 
+            this.ThiknesscomboBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ThiknesscomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ThiknesscomboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ThiknesscomboBox.ForeColor = System.Drawing.Color.Black;
+            this.ThiknesscomboBox.FormattingEnabled = true;
+            this.ThiknesscomboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "4",
+            "6",
+            "8",
+            "10",
+            "12"});
+            this.ThiknesscomboBox.Location = new System.Drawing.Point(416, 599);
+            this.ThiknesscomboBox.Name = "ThiknesscomboBox";
+            this.ThiknesscomboBox.Size = new System.Drawing.Size(75, 23);
+            this.ThiknesscomboBox.TabIndex = 23;
+            this.ThiknesscomboBox.SelectedIndexChanged += new System.EventHandler(this.ThiknesscomboBox_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(413, 575);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 15);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Thikness";
+            // 
             // Painter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 632);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.ThiknesscomboBox);
+            this.Controls.Add(this.ContourColorButton);
             this.Controls.Add(this.FigureslistBox);
-            this.Controls.Add(this.Color_comboBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.textBox5);
@@ -407,13 +433,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox Color_comboBox;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem SaveMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ListBox FigureslistBox;
+        private System.Windows.Forms.ColorDialog ContourcolorDialog;
+        private System.Windows.Forms.Button ContourColorButton;
+        private System.Windows.Forms.ComboBox ThiknesscomboBox;
+        private System.Windows.Forms.Label label10;
     }
 }
 

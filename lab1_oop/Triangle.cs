@@ -16,14 +16,13 @@ namespace lab1_oop
         public Point SecDot;
         public Point ThirdDot;
 
-        public float Width;
 
         public override int pointCount { get { return 3; } }
     
         public Triangle()
         {
             Color = Color.Black;
-            Width = 1;
+            Thikness = 1;
         }
 
         public Triangle(List<Point> points) : this()
@@ -52,7 +51,7 @@ namespace lab1_oop
             if (points.Count != pointCount || points[0].IsEmpty || points[1].IsEmpty || points[2].IsEmpty || graphics == null)
                 return;
 
-            var pen = new Pen(Color, Width);
+            var pen = new Pen(Color, Thikness);
             graphics.DrawPolygon(pen, points.ToArray());
             pen.Dispose();
         }

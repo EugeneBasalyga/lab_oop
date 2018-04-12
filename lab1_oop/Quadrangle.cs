@@ -19,7 +19,7 @@ namespace lab1_oop
         public Quadrangle():base()
         {
             Color = Color.Black;
-            Width = 1;
+            Thikness = 1;
         }
 
         public Quadrangle(List<Point> points) : this()
@@ -60,7 +60,7 @@ namespace lab1_oop
                  FourthDot
             };
 
-            var pen = new Pen(Color, Width);
+            var pen = new Pen(Color, Thikness);
             graphics.DrawPolygon(pen, currPoints);
             pen.Dispose();
         }

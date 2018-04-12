@@ -15,14 +15,13 @@ namespace lab1_oop
         public Point Start;
         public Point End;
 
-        public float Width;
 
         public override int pointCount { get { return 2; } }
 
         public Line()
         {
             Color = Color.Black;
-            Width = 1;
+            Thikness = 1;
         }
         public Line(List<Point> points) : this()
         {
@@ -31,7 +30,7 @@ namespace lab1_oop
         }
         public Line(List<Point> points, float width) : this(points)
         {
-            Width = width;
+            Thikness = width;
         }
         public Line(List<Point> points, float width, Color color) : this(points, width)
         {
@@ -52,7 +51,7 @@ namespace lab1_oop
             if (points[0].IsEmpty || points[1].IsEmpty || graphics == null)
                 return;
 
-            var pen = new Pen(Color, Width);
+            var pen = new Pen(Color, Thikness);
             graphics.DrawLine(pen, points[0], points[1]);
             pen.Dispose();
         }
@@ -62,7 +61,7 @@ namespace lab1_oop
             if (Start.IsEmpty || End.IsEmpty || graphics == null)
                 return;
 
-            var pen = new Pen(Color, Width);
+            var pen = new Pen(Color, Thikness);
             graphics.DrawLine(pen, Start, End);
             pen.Dispose();
         }

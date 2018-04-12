@@ -15,14 +15,14 @@ namespace lab1_oop
         protected readonly List<TextBox> tbList = new List<TextBox>();
         protected List<Figure> drawList = new List<Figure>();
         protected readonly List<Point> points = new List<Point>();
-        protected readonly List<Color> colorsList = new List<Color>();
         protected readonly List<String> InitFiguresList = new List<String>();
+        protected readonly List<float> ThiknessList = new List<float>();
         Serialization Picture = new Serialization();
 
         private void Draw_button_Click(object sender, EventArgs e)
         {
             //dynamically create a copy of the figure, add it to the list, then draw
-            drawList.Add(FigureList.figures[Figure_comboBox.SelectedIndex].CreateCopy(points, colorsList[Color_comboBox.SelectedIndex]));
+            drawList.Add(FigureList.figures[Figure_comboBox.SelectedIndex].CreateCopy(points, ContourcolorDialog.Color, ThiknessList[ThiknesscomboBox.SelectedIndex]));
             if (points.Count == drawList[drawList.Count - 1].pointCount)
                 FigureslistBox.Items.Add(InitFiguresList[Figure_comboBox.SelectedIndex]);
             points.Clear();
@@ -43,17 +43,19 @@ namespace lab1_oop
             tbList.Add(textBox6);
             tbList.Add(textBox4);
             tbList.Add(textBox5);
-            colorsList.Add(Color.Black);
-            colorsList.Add(Color.Red);
-            colorsList.Add(Color.Green);
-            colorsList.Add(Color.Yellow);
-            colorsList.Add(Color.Blue);
             InitFiguresList.Add("Line");
             InitFiguresList.Add("Rectangle");
             InitFiguresList.Add("Ellipse");
             InitFiguresList.Add("Circle");
             InitFiguresList.Add("Triangle");
             InitFiguresList.Add("Quadrangle");
+            ThiknessList.Add(1);
+            ThiknessList.Add(2);
+            ThiknessList.Add(4);
+            ThiknessList.Add(6);
+            ThiknessList.Add(8);
+            ThiknessList.Add(10);
+            ThiknessList.Add(12);
         }
 
 
@@ -68,9 +70,11 @@ namespace lab1_oop
 
         private void Painter_Load(object sender, EventArgs e)
         {
+            ThiknesscomboBox.SelectedItem = ThiknesscomboBox.Items[0];
             Figure_comboBox.SelectedItem = Figure_comboBox.Items[0];
-            Color_comboBox.SelectedItem = Color_comboBox.Items[0];
-            foreach(var tb in tbList)
+            ContourcolorDialog.Color = Color.Black;
+            ContourColorButton.BackColor = ContourcolorDialog.Color;
+            foreach (var tb in tbList)
             {
                 tb.ReadOnly = true;
             }
@@ -105,16 +109,6 @@ namespace lab1_oop
             drawList.Clear();
             Paint_Panel.Invalidate();
         }
-
-        private void Color_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (FigureslistBox.SelectedIndex != -1)
-            {
-                drawList[FigureslistBox.SelectedIndex].Color = colorsList[Color_comboBox.SelectedIndex];
-            }
-            Paint_Panel.Invalidate();
-        }
-
 
         private void SaveMenuItem_Click(object sender, EventArgs e)
         {
@@ -161,6 +155,28 @@ namespace lab1_oop
                     FigureslistBox.Items.Remove(FigureslistBox.SelectedItem);
                     Paint_Panel.Invalidate();
                 }
+            }
+        }
+
+        private void ContourColorButton_Click(object sender, EventArgs e)
+        {
+            if (ContourcolorDialog.ShowDialog() == DialogResult.OK)
+            {
+                ContourColorButton.BackColor = ContourcolorDialog.Color;
+                if (FigureslistBox.SelectedIndex != -1)
+                {
+                    drawList[FigureslistBox.SelectedIndex].Color = ContourcolorDialog.Color;
+                    Paint_Panel.Invalidate();
+                }
+            }
+        }
+
+        private void ThiknesscomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FigureslistBox.SelectedIndex != -1)
+            {
+                drawList[FigureslistBox.SelectedIndex].Thikness = ThiknessList[ThiknesscomboBox.SelectedIndex];
+                Paint_Panel.Invalidate();
             }
         }
     }
