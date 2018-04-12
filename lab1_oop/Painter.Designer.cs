@@ -31,6 +31,7 @@
             this.Paint_Panel = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.SaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Figure_comboBox = new System.Windows.Forms.ComboBox();
             this.Draw_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,9 +53,9 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.Color_comboBox = new System.Windows.Forms.ComboBox();
-            this.OpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.FigureslistBox = new System.Windows.Forms.ListBox();
             this.Paint_Panel.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,7 @@
             this.Paint_Panel.Controls.Add(this.menu);
             this.Paint_Panel.Location = new System.Drawing.Point(0, 0);
             this.Paint_Panel.Name = "Paint_Panel";
-            this.Paint_Panel.Size = new System.Drawing.Size(1067, 510);
+            this.Paint_Panel.Size = new System.Drawing.Size(983, 500);
             this.Paint_Panel.TabIndex = 0;
             this.Paint_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Paint_Panel_Paint);
             this.Paint_Panel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Paint_Panel_MouseClick);
@@ -78,7 +79,8 @@
             this.OpenMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1065, 24);
+            this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menu.Size = new System.Drawing.Size(981, 24);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -88,6 +90,13 @@
             this.SaveMenuItem.Size = new System.Drawing.Size(77, 20);
             this.SaveMenuItem.Text = "Сохранить";
             this.SaveMenuItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
+            // 
+            // OpenMenuItem
+            // 
+            this.OpenMenuItem.Name = "OpenMenuItem";
+            this.OpenMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.OpenMenuItem.Text = "Открыть";
+            this.OpenMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
             // 
             // Figure_comboBox
             // 
@@ -314,22 +323,31 @@
             this.Color_comboBox.TabIndex = 21;
             this.Color_comboBox.SelectedIndexChanged += new System.EventHandler(this.Color_comboBox_SelectedIndexChanged);
             // 
-            // OpenMenuItem
-            // 
-            this.OpenMenuItem.Name = "OpenMenuItem";
-            this.OpenMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.OpenMenuItem.Text = "Открыть";
-            this.OpenMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
-            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // FigureslistBox
+            // 
+            this.FigureslistBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.FigureslistBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FigureslistBox.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FigureslistBox.FormattingEnabled = true;
+            this.FigureslistBox.ItemHeight = 15;
+            this.FigureslistBox.Location = new System.Drawing.Point(985, 1);
+            this.FigureslistBox.Name = "FigureslistBox";
+            this.FigureslistBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.FigureslistBox.Size = new System.Drawing.Size(79, 499);
+            this.FigureslistBox.TabIndex = 1;
+            this.FigureslistBox.Click += new System.EventHandler(this.FigureslistBox_Click);
+            this.FigureslistBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FigureslistBox_KeyPress);
             // 
             // Painter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 632);
+            this.Controls.Add(this.FigureslistBox);
             this.Controls.Add(this.Color_comboBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.ClearButton);
@@ -395,6 +413,7 @@
         private System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ListBox FigureslistBox;
     }
 }
 

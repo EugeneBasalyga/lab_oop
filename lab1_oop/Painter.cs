@@ -16,12 +16,15 @@ namespace lab1_oop
         protected List<Figure> drawList = new List<Figure>();
         protected readonly List<Point> points = new List<Point>();
         protected readonly List<Color> colorsList = new List<Color>();
+        protected readonly List<String> InitFiguresList = new List<String>();
         Serialization Picture = new Serialization();
 
         private void Draw_button_Click(object sender, EventArgs e)
         {
             //dynamically create a copy of the figure, add it to the list, then draw
             drawList.Add(FigureList.figures[Figure_comboBox.SelectedIndex].CreateCopy(points, colorsList[Color_comboBox.SelectedIndex]));
+            if (points.Count == drawList[drawList.Count - 1].pointCount)
+                FigureslistBox.Items.Add(InitFiguresList[Figure_comboBox.SelectedIndex]);
             points.Clear();
             foreach (var tb in tbList)
                 tb.Clear();
@@ -45,6 +48,12 @@ namespace lab1_oop
             colorsList.Add(Color.Green);
             colorsList.Add(Color.Yellow);
             colorsList.Add(Color.Blue);
+            InitFiguresList.Add("Line");
+            InitFiguresList.Add("Rectangle");
+            InitFiguresList.Add("Ellipse");
+            InitFiguresList.Add("Circle");
+            InitFiguresList.Add("Triangle");
+            InitFiguresList.Add("Quadrangle");
         }
 
 
@@ -92,13 +101,18 @@ namespace lab1_oop
         private void ClearButton_Click(object sender, EventArgs e)
         {
             //clear paint
+            FigureslistBox.Items.Clear();
             drawList.Clear();
             Paint_Panel.Invalidate();
         }
 
         private void Color_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (FigureslistBox.SelectedIndex != -1)
+            {
+                drawList[FigureslistBox.SelectedIndex].Color = colorsList[Color_comboBox.SelectedIndex];
+            }
+            Paint_Panel.Invalidate();
         }
 
 
@@ -113,11 +127,40 @@ namespace lab1_oop
 
         private void OpenMenuItem_Click(object sender, EventArgs e)
         {
+            FigureslistBox.Items.Clear();
+            string tmp = null;
             openFileDialog.Filter = "All files(*.*) | *.dat";
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 drawList = Picture.Deserialize(openFileDialog.FileName);
+                for (var i = 0; i < drawList.Count; i++)
+                {
+                    tmp = drawList[i].GetType().ToString();
+                    FigureslistBox.Items.Add(tmp.Substring(9));
+                }
                 Paint_Panel.Invalidate();
+            }
+        }
+
+        private void FigureslistBox_Click(object sender, EventArgs e)
+        {
+            if (FigureslistBox.SelectedIndex != -1)
+            {
+
+            }
+        }
+
+        private void FigureslistBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (FigureslistBox.SelectedIndex != -1)
+            {
+                if (e.KeyChar == (Char)Keys.Back)
+                {
+                    // drawList[FigureslistBox.SelectedIndex].
+                    drawList.RemoveAt(FigureslistBox.SelectedIndex);
+                    FigureslistBox.Items.Remove(FigureslistBox.SelectedItem);
+                    Paint_Panel.Invalidate();
+                }
             }
         }
     }
