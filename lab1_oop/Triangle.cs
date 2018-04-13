@@ -52,8 +52,12 @@ namespace lab1_oop
                 return;
 
             var pen = new Pen(Color, Thikness);
+            SolidBrush brush = new SolidBrush(BrushColor);
+
             graphics.DrawPolygon(pen, points.ToArray());
+            graphics.FillPolygon(brush, points.ToArray());
             pen.Dispose();
+            brush.Dispose();
         }
 
         public override void Draw(Graphics graphics)

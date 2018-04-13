@@ -73,9 +73,13 @@ namespace lab1_oop
                 return;
 
             var pen = new Pen(Color, Thikness);
+            SolidBrush brush = new SolidBrush(BrushColor);
+
             int radius = GetHypo(BottomRight.X - TopLeft.X, BottomRight.Y - TopLeft.Y);
             graphics.DrawEllipse(pen, TopLeft.X - radius, TopLeft.Y - radius, radius * 2, radius * 2);
+            graphics.FillEllipse(brush, TopLeft.X - radius, TopLeft.Y - radius, radius * 2, radius * 2);
             pen.Dispose();
+            brush.Dispose();
         }
 
         private int GetHypo(int a, int b)

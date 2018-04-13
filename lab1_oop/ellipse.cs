@@ -72,9 +72,13 @@ namespace lab1_oop
                 return;
 
             var pen = new Pen(Color, Thikness);
+            SolidBrush brush = new SolidBrush(BrushColor);
+
             var rect = new System.Drawing.Rectangle(TopLeft.X, TopLeft.Y, BottomRight.X - TopLeft.X, BottomRight.Y - TopLeft.Y);
             graphics.DrawEllipse(pen, rect);
+            graphics.FillEllipse(brush, rect);
             pen.Dispose();
+            brush.Dispose();
         }
     }
 }

@@ -59,6 +59,9 @@
             this.ContourColorButton = new System.Windows.Forms.Button();
             this.ThiknesscomboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.BrushColorButton = new System.Windows.Forms.Button();
+            this.BrushColorDialog = new System.Windows.Forms.ColorDialog();
             this.Paint_Panel.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -366,11 +369,32 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "Thikness";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(526, 516);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 15);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Brush color";
+            // 
+            // BrushColorButton
+            // 
+            this.BrushColorButton.Location = new System.Drawing.Point(529, 543);
+            this.BrushColorButton.Name = "BrushColorButton";
+            this.BrushColorButton.Size = new System.Drawing.Size(75, 23);
+            this.BrushColorButton.TabIndex = 26;
+            this.BrushColorButton.UseVisualStyleBackColor = true;
+            this.BrushColorButton.Click += new System.EventHandler(this.BrushColorButton_Click);
+            // 
             // Painter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 632);
+            this.Controls.Add(this.BrushColorButton);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.ThiknesscomboBox);
             this.Controls.Add(this.ContourColorButton);
@@ -443,6 +467,9 @@
         private System.Windows.Forms.Button ContourColorButton;
         private System.Windows.Forms.ComboBox ThiknesscomboBox;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button BrushColorButton;
+        private System.Windows.Forms.ColorDialog BrushColorDialog;
     }
 }
 

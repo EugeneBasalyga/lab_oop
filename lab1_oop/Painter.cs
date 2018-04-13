@@ -22,7 +22,7 @@ namespace lab1_oop
         private void Draw_button_Click(object sender, EventArgs e)
         {
             //dynamically create a copy of the figure, add it to the list, then draw
-            drawList.Add(FigureList.figures[Figure_comboBox.SelectedIndex].CreateCopy(points, ContourcolorDialog.Color, ThiknessList[ThiknesscomboBox.SelectedIndex]));
+            drawList.Add(FigureList.figures[Figure_comboBox.SelectedIndex].CreateCopy(points, ContourcolorDialog.Color, ThiknessList[ThiknesscomboBox.SelectedIndex], BrushColorDialog.Color));
             if (points.Count == drawList[drawList.Count - 1].pointCount)
                 FigureslistBox.Items.Add(InitFiguresList[Figure_comboBox.SelectedIndex]);
             points.Clear();
@@ -74,6 +74,8 @@ namespace lab1_oop
             Figure_comboBox.SelectedItem = Figure_comboBox.Items[0];
             ContourcolorDialog.Color = Color.Black;
             ContourColorButton.BackColor = ContourcolorDialog.Color;
+            BrushColorDialog.Color = Color.White;
+            BrushColorButton.BackColor = BrushColorDialog.Color;
             foreach (var tb in tbList)
             {
                 tb.ReadOnly = true;
@@ -177,6 +179,19 @@ namespace lab1_oop
             {
                 drawList[FigureslistBox.SelectedIndex].Thikness = ThiknessList[ThiknesscomboBox.SelectedIndex];
                 Paint_Panel.Invalidate();
+            }
+        }
+
+        private void BrushColorButton_Click(object sender, EventArgs e)
+        {
+            if (BrushColorDialog.ShowDialog() == DialogResult.OK)
+            {
+                BrushColorButton.BackColor = BrushColorDialog.Color;
+                if (FigureslistBox.SelectedIndex != -1)
+                {
+                    drawList[FigureslistBox.SelectedIndex].BrushColor = BrushColorDialog.Color;
+                    Paint_Panel.Invalidate();
+                }
             }
         }
     }

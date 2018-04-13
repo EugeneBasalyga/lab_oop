@@ -61,8 +61,12 @@ namespace lab1_oop
             };
 
             var pen = new Pen(Color, Thikness);
+            SolidBrush brush = new SolidBrush(BrushColor);
+
             graphics.DrawPolygon(pen, currPoints);
+            graphics.FillPolygon(brush, currPoints);
             pen.Dispose();
+            brush.Dispose();
         }
     }
 }

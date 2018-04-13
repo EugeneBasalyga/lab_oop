@@ -75,8 +75,12 @@ namespace lab1_oop
 
 
             var pen = new Pen(Color, Thikness);
+            SolidBrush brush = new SolidBrush(BrushColor);
+
             var rect = new System.Drawing.Rectangle(TopLeft.X, TopLeft.Y, BottomRight.X - TopLeft.X, BottomRight.Y - TopLeft.Y);
             graphics.DrawRectangle(pen, rect);
+            graphics.FillRectangle(brush, rect);
+            brush.Dispose();
             pen.Dispose();
         }
     }
