@@ -29,7 +29,8 @@ namespace lab1_oop
             x.SetPoints(points); //set field points
             x.Color = color;
             x.Thikness = thikness;
-            x.BrushColor = brushcolor;
+            if (brushcolor != Color.White)
+                x.BrushColor = brushcolor;
             return x;
         }
     }

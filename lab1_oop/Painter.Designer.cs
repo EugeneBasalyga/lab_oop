@@ -424,6 +424,7 @@
             this.MainMenuStrip = this.menu;
             this.Name = "Painter";
             this.Text = "Paint";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Painter_FormClosed);
             this.Load += new System.EventHandler(this.Painter_Load);
             this.Paint_Panel.ResumeLayout(false);
             this.Paint_Panel.PerformLayout();

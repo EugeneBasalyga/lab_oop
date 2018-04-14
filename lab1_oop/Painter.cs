@@ -129,6 +129,8 @@ namespace lab1_oop
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 drawList = Picture.Deserialize(openFileDialog.FileName);
+                if (drawList == null)
+                    drawList = new List<Figure>();
                 for (var i = 0; i < drawList.Count; i++)
                 {
                     tmp = drawList[i].GetType().ToString();
@@ -193,6 +195,11 @@ namespace lab1_oop
                     Paint_Panel.Invalidate();
                 }
             }
+        }
+
+        private void Painter_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            drawList.Clear();
         }
     }
 }
