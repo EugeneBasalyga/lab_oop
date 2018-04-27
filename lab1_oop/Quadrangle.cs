@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
+using Drawable;
 
 namespace lab1_oop
 {
@@ -16,7 +12,7 @@ namespace lab1_oop
 
         public override int pointCount { get { return 4; } }
 
-        public Quadrangle():base()
+        public Quadrangle() : base()
         {
             Color = Color.Black;
             Thikness = 1;

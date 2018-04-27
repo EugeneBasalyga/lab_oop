@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
 
 
 
-namespace lab1_oop
+namespace Drawable
 {
     [Serializable]
     public abstract class Figure
     {
+        public Color Color { get; set; }
+        public Color BrushColor { get; set; }
+        public float Thikness { get; set; }
+
         public abstract void Draw(Graphics graphics);
         public abstract void Draw(Graphics graphics, List<Point> points);
         public virtual int pointCount { get; }
-        public Color Color;
-        public Color BrushColor;
-        public float Thikness;
 
         public abstract void SetPoints(List<Point> points);
 
@@ -33,5 +29,9 @@ namespace lab1_oop
                 x.BrushColor = brushcolor;
             return x;
         }
+
+
     }
+
 }
+

@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,8 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
-    <Compile Include="Ellipse.cs" />
-    <Compile Include="Figure.cs" />
     <Compile Include="FigureList.cs" />
     <Compile Include="Painter.cs">
       <SubType>Form</SubType>
@@ -59,7 +60,6 @@
     <Compile Include="Line.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rectangle.cs" />
     <Compile Include="Quadrangle.cs" />
     <Compile Include="Serialization.cs" />
     <Compile Include="Triangle.cs" />
@@ -88,7 +88,33 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Drawable\Drawable.csproj">
+      <Project>{52bbbf16-6316-4ae9-8c2b-dd8634876dfd}</Project>
+      <Name>Drawable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ellipse_dll\EllipsePlugin.csproj">
+      <Project>{3d47afa2-2077-49a9-b411-56070a658565}</Project>
+      <Name>EllipsePlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericPluginSystem\GenericPluginSystem.csproj">
+      <Project>{68d6d97f-a1dc-4cf7-9761-77d05a2f4f99}</Project>
+      <Name>GenericPluginSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RectanglePlugin\RectanglePlugin.csproj">
+      <Project>{f2e949dd-4f3e-45ca-96a8-e75d273f5cc8}</Project>
+      <Name>RectanglePlugin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(TargetDir)Plugins" ( mkdir "$(TargetDir)Plugins" )
+copy/Y "$(TargetDir)EllipsePlugin.*"  "$(TargetDir)Plugins"
+copy/Y "$(TargetDir)RectanglePlugin.*"  "$(TargetDir)Plugins"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

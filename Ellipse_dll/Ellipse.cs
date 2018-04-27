@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
+using Drawable;
 
-namespace lab1_oop
+namespace EllipsePlugin
 {
     [Serializable]
     public class Ellipse : Figure
     {
         public Point TopLeft;
         public Point BottomRight;
-
 
         public override int pointCount { get { return 2; } }
 

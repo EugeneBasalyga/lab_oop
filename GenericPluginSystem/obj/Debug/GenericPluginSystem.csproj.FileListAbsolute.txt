@@ -1,0 +1,4 @@
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\bin\Debug\GenericPluginSystem.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\bin\Debug\GenericPluginSystem.pdb
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\obj\Debug\GenericPluginSystem.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\obj\Debug\GenericPluginSystem.pdb

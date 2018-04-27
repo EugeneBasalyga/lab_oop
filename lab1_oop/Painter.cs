@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Drawable;
+using GenericPluginSystem;
+
 
 namespace lab1_oop
 {
@@ -15,16 +13,22 @@ namespace lab1_oop
         protected readonly List<TextBox> tbList = new List<TextBox>();
         protected List<Figure> drawList = new List<Figure>();
         protected readonly List<Point> points = new List<Point>();
-        protected readonly List<String> InitFiguresList = new List<String>();
         protected readonly List<float> ThiknessList = new List<float>();
         Serialization Picture = new Serialization();
 
         private void Draw_button_Click(object sender, EventArgs e)
         {
+            string tmp = null;
             //dynamically create a copy of the figure, add it to the list, then draw
             drawList.Add(FigureList.figures[Figure_comboBox.SelectedIndex].CreateCopy(points, ContourcolorDialog.Color, ThiknessList[ThiknesscomboBox.SelectedIndex], BrushColorDialog.Color));
-            if (points.Count == drawList[drawList.Count - 1].pointCount)
-                FigureslistBox.Items.Add(InitFiguresList[Figure_comboBox.SelectedIndex]);
+            if (points.Count != drawList[drawList.Count - 1].pointCount)
+                drawList.Remove(drawList[drawList.Count - 1]);
+            else
+            {
+                tmp = drawList[drawList.Count - 1].GetType().Name;
+                FigureslistBox.Items.Add(tmp);
+            }
+
             points.Clear();
             foreach (var tb in tbList)
                 tb.Clear();
@@ -43,12 +47,6 @@ namespace lab1_oop
             tbList.Add(textBox6);
             tbList.Add(textBox4);
             tbList.Add(textBox5);
-            InitFiguresList.Add("Line");
-            InitFiguresList.Add("Rectangle");
-            InitFiguresList.Add("Ellipse");
-            InitFiguresList.Add("Circle");
-            InitFiguresList.Add("Triangle");
-            InitFiguresList.Add("Quadrangle");
             ThiknessList.Add(1);
             ThiknessList.Add(2);
             ThiknessList.Add(4);
@@ -57,7 +55,6 @@ namespace lab1_oop
             ThiknessList.Add(10);
             ThiknessList.Add(12);
         }
-
 
         private void Paint_Panel_Paint(object sender, PaintEventArgs e)
         {
@@ -71,7 +68,6 @@ namespace lab1_oop
         private void Painter_Load(object sender, EventArgs e)
         {
             ThiknesscomboBox.SelectedItem = ThiknesscomboBox.Items[0];
-            Figure_comboBox.SelectedItem = Figure_comboBox.Items[0];
             ContourcolorDialog.Color = Color.Black;
             ContourColorButton.BackColor = ContourcolorDialog.Color;
             BrushColorDialog.Color = Color.White;
@@ -80,6 +76,20 @@ namespace lab1_oop
             {
                 tb.ReadOnly = true;
             }
+            ICollection<Figure> plugins = GenericPluginLoader<Figure>.LoadPlugins("Plugins");
+            if (plugins != null)
+            {
+                foreach (var p in plugins)
+                {
+                    FigureList.figures.Add(p);
+                }
+            }
+            foreach (var f in FigureList.figures)
+            {
+                Figure_comboBox.Items.Add(f.GetType().Name);
+            }
+            if(Figure_comboBox.Items.Count > 0)
+                Figure_comboBox.SelectedItem = Figure_comboBox.Items[0];
         }
 
         private void Paint_Panel_MouseClick(object sender, MouseEventArgs e)
@@ -133,8 +143,8 @@ namespace lab1_oop
                     drawList = new List<Figure>();
                 for (var i = 0; i < drawList.Count; i++)
                 {
-                    tmp = drawList[i].GetType().ToString();
-                    FigureslistBox.Items.Add(tmp.Substring(9));
+                    tmp = drawList[i].GetType().Name;
+                    FigureslistBox.Items.Add(tmp);
                 }
                 Paint_Panel.Invalidate();
             }

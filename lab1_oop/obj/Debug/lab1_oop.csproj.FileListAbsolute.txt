@@ -7,3 +7,11 @@ C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\ob
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\lab1_oop.exe
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\lab1_oop.pdb
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\lab1_oop.Painter.resources
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\Drawable.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\Drawable.pdb
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\GenericPluginSystem.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\GenericPluginSystem.pdb
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\EllipsePlugin.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\EllipsePlugin.pdb
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\RectanglePlugin.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\RectanglePlugin.pdb

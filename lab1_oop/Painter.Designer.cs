@@ -111,13 +111,6 @@
             this.Figure_comboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Figure_comboBox.ForeColor = System.Drawing.Color.Black;
             this.Figure_comboBox.FormattingEnabled = true;
-            this.Figure_comboBox.Items.AddRange(new object[] {
-            "Line",
-            "Rectangle",
-            "Ellipse",
-            "Circle",
-            "Triangle",
-            "Quadrangle"});
             this.Figure_comboBox.Location = new System.Drawing.Point(12, 550);
             this.Figure_comboBox.Name = "Figure_comboBox";
             this.Figure_comboBox.Size = new System.Drawing.Size(123, 23);

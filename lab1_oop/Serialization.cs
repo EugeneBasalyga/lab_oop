@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
+using Drawable;
+
 
 namespace lab1_oop
 {
@@ -27,7 +22,10 @@ namespace lab1_oop
             {
                 MessageBox.Show("Save Error");
             }
-            fs.Close();
+            finally
+            {
+                fs.Close();
+            }
         }
 
 
@@ -35,7 +33,7 @@ namespace lab1_oop
         {
             List<Figure> DeserializedFigures = null;
             BinaryFormatter serializer = new BinaryFormatter();
-            
+
 
             FileStream fs = new FileStream(FileName, FileMode.Open);
             try
@@ -46,7 +44,10 @@ namespace lab1_oop
             {
                 MessageBox.Show("Open Error");
             }
-            fs.Close();
+            finally
+            {
+                fs.Close();
+            }
             return DeserializedFigures;
         }
     }
