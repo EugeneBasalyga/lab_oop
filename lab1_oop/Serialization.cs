@@ -12,10 +12,11 @@ namespace lab1_oop
 
         public void Serialize(List<Figure> FigureList, string FileName)
         {
-            FileStream fs = new FileStream(FileName, FileMode.Create);
+            FileStream fs = null;
             BinaryFormatter serializer = new BinaryFormatter();
             try
             {
+                fs = new FileStream(FileName, FileMode.Create);
                 serializer.Serialize(fs, FigureList);
             }
             catch
@@ -24,7 +25,8 @@ namespace lab1_oop
             }
             finally
             {
-                fs.Close();
+                if(fs != null)
+                    fs.Close();
             }
         }
 

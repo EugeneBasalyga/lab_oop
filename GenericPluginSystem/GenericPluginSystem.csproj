@@ -43,6 +43,12 @@
     <Compile Include="GenericPluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Drawable\Drawable.csproj">
+      <Project>{52bbbf16-6316-4ae9-8c2b-dd8634876dfd}</Project>
+      <Name>Drawable</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

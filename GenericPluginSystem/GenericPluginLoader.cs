@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using Drawable;
 
 namespace GenericPluginSystem
 {
-    public static class GenericPluginLoader<T>
+    public static class GenericPluginLoader<T> where T : Figure
     {
         public static ICollection<T> LoadPlugins(string path)
         {

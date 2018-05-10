@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<head>
+  <Panel number="1">
+    <ArgbColor>-16744193</ArgbColor>
+  </Panel>
+  <Language number="1">
+    <savemenuitem>Сохранить как</savemenuitem>
+    <openmenuitem>Открыть</openmenuitem>
+    <settingsToolStripMenuItem>Настройки</settingsToolStripMenuItem>
+    <changepanelcolortoolstripmenuItem1>Изменить цвет панели</changepanelcolortoolstripmenuItem1>
+    <languagetoolstripmenuitem>Язык</languagetoolstripmenuitem>
+    <russiantoolstripmenuitem>Русский</russiantoolstripmenuitem>
+    <englishtoolstripmenuitem>Английский</englishtoolstripmenuitem>
+    <draw_button>Рисовать</draw_button>
+    <clearButton>Очистить</clearButton>
+    <line>Линия</line>
+    <circle>Круг</circle>
+    <triangle>Треугольник</triangle>
+    <quadrangle>Четырёхугольник</quadrangle>
+    <ellipse>Эллипс</ellipse>
+    <rectangle>Прямоугольник</rectangle>
+    <thiknesslabel>Толщина</thiknesslabel>
+    <contourlabel>Цвет контура</contourlabel>
+    <brushlabel>Цвет кисти</brushlabel>
+    <saveconfiglabel>Сохранить настройки ?</saveconfiglabel>
+    <buttonyes>Да</buttonyes>
+    <buttonno>Нет</buttonno>
+  </Language>
+</head>

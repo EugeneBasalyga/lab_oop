@@ -51,17 +51,23 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ClearButton = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.ContourLabel = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.FigureslistBox = new System.Windows.Forms.ListBox();
             this.ContourcolorDialog = new System.Windows.Forms.ColorDialog();
             this.ContourColorButton = new System.Windows.Forms.Button();
             this.ThiknesscomboBox = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.ThiknessLabel = new System.Windows.Forms.Label();
+            this.BrushLabel = new System.Windows.Forms.Label();
             this.BrushColorButton = new System.Windows.Forms.Button();
             this.BrushColorDialog = new System.Windows.Forms.ColorDialog();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePanelColorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PanelColorDialog = new System.Windows.Forms.ColorDialog();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Paint_Panel.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +88,8 @@
             // 
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveMenuItem,
-            this.OpenMenuItem});
+            this.OpenMenuItem,
+            this.settingsToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -293,15 +300,15 @@
             this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // label9
+            // ContourLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(413, 516);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 15);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Contour color";
+            this.ContourLabel.AutoSize = true;
+            this.ContourLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ContourLabel.Location = new System.Drawing.Point(413, 516);
+            this.ContourLabel.Name = "ContourLabel";
+            this.ContourLabel.Size = new System.Drawing.Size(83, 15);
+            this.ContourLabel.TabIndex = 20;
+            this.ContourLabel.Text = "Contour color";
             // 
             // openFileDialog
             // 
@@ -352,25 +359,25 @@
             this.ThiknesscomboBox.TabIndex = 23;
             this.ThiknesscomboBox.SelectedIndexChanged += new System.EventHandler(this.ThiknesscomboBox_SelectedIndexChanged);
             // 
-            // label10
+            // ThiknessLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(413, 575);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 15);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Thikness";
+            this.ThiknessLabel.AutoSize = true;
+            this.ThiknessLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ThiknessLabel.Location = new System.Drawing.Point(413, 575);
+            this.ThiknessLabel.Name = "ThiknessLabel";
+            this.ThiknessLabel.Size = new System.Drawing.Size(59, 15);
+            this.ThiknessLabel.TabIndex = 24;
+            this.ThiknessLabel.Text = "Thikness";
             // 
-            // label11
+            // BrushLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(526, 516);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 15);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Brush color";
+            this.BrushLabel.AutoSize = true;
+            this.BrushLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BrushLabel.Location = new System.Drawing.Point(526, 516);
+            this.BrushLabel.Name = "BrushLabel";
+            this.BrushLabel.Size = new System.Drawing.Size(73, 15);
+            this.BrushLabel.TabIndex = 25;
+            this.BrushLabel.Text = "Brush color";
             // 
             // BrushColorButton
             // 
@@ -381,18 +388,57 @@
             this.BrushColorButton.UseVisualStyleBackColor = true;
             this.BrushColorButton.Click += new System.EventHandler(this.BrushColorButton_Click);
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePanelColorToolStripMenuItem1,
+            this.languageToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // changePanelColorToolStripMenuItem1
+            // 
+            this.changePanelColorToolStripMenuItem1.Name = "changePanelColorToolStripMenuItem1";
+            this.changePanelColorToolStripMenuItem1.Size = new System.Drawing.Size(179, 22);
+            this.changePanelColorToolStripMenuItem1.Text = "Change Panel Color";
+            this.changePanelColorToolStripMenuItem1.Click += new System.EventHandler(this.changePanelColorToolStripMenuItem1_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.russianToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.languageToolStripMenuItem.Text = "Language";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // russianToolStripMenuItem
+            // 
+            this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
+            this.russianToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.russianToolStripMenuItem.Text = "Russian";
+            this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
+            // 
             // Painter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 632);
             this.Controls.Add(this.BrushColorButton);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.BrushLabel);
+            this.Controls.Add(this.ThiknessLabel);
             this.Controls.Add(this.ThiknesscomboBox);
             this.Controls.Add(this.ContourColorButton);
             this.Controls.Add(this.FigureslistBox);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.ContourLabel);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
@@ -417,6 +463,7 @@
             this.MainMenuStrip = this.menu;
             this.Name = "Painter";
             this.Text = "Paint";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Painter_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Painter_FormClosed);
             this.Load += new System.EventHandler(this.Painter_Load);
             this.Paint_Panel.ResumeLayout(false);
@@ -450,7 +497,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button ClearButton;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label ContourLabel;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem SaveMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
@@ -460,10 +507,16 @@
         private System.Windows.Forms.ColorDialog ContourcolorDialog;
         private System.Windows.Forms.Button ContourColorButton;
         private System.Windows.Forms.ComboBox ThiknesscomboBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label ThiknessLabel;
+        private System.Windows.Forms.Label BrushLabel;
         private System.Windows.Forms.Button BrushColorButton;
         private System.Windows.Forms.ColorDialog BrushColorDialog;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePanelColorToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ColorDialog PanelColorDialog;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
     }
 }
 

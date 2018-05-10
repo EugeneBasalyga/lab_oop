@@ -2,3 +2,6 @@ C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPlug
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\bin\Debug\GenericPluginSystem.pdb
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\obj\Debug\GenericPluginSystem.dll
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\obj\Debug\GenericPluginSystem.pdb
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\obj\Debug\GenericPluginSystem.csprojResolveAssemblyReference.cache
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\bin\Debug\Drawable.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\GenericPluginSystem\bin\Debug\Drawable.pdb
