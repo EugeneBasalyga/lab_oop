@@ -271,8 +271,7 @@ namespace lab1_oop
             {
                 document.Load("config.xml");
                 XmlElement element = document.DocumentElement;
-                XmlNode node = element["head"];
-                node.RemoveAll();
+                element.RemoveAll();
             }
             catch
             {
@@ -337,8 +336,7 @@ namespace lab1_oop
             {
                 document.Load("config.xml");
                 XmlElement element = document.DocumentElement;
-                XmlNode node = element["head"];
-                node.RemoveAll();
+                element.RemoveAll();
             }
             catch
             {

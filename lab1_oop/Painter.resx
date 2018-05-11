@@ -130,8 +130,9 @@
   <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 9.75pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBox8.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="BrushColorButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>529, 543</value>
@@ -182,17 +183,20 @@
   <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 22</value>
   </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <data name="FigureslistBox.ItemHeight" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="ThiknesscomboBox.Items4" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="OpenMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;textBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textBox6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 9.75pt</value>
@@ -203,8 +207,8 @@
   <data name="textBox5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;SaveMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;FigureslistBox.Name" xml:space="preserve">
+    <value>FigureslistBox</value>
   </data>
   <data name="changePanelColorToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 22</value>
@@ -260,14 +264,14 @@
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>300, 575</value>
   </data>
-  <data name="BrushLabel.Text" xml:space="preserve">
-    <value>Brush Color</value>
+  <data name="Draw_button.Text" xml:space="preserve">
+    <value>Draw</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;menu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="textBox5.Location" type="System.Drawing.Point, System.Drawing">
     <value>328, 600</value>
@@ -275,11 +279,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Paint</value>
   </data>
+  <data name="Figure_comboBox.Items5" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
   <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 22</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>300, 519</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
@@ -293,7 +297,6 @@
   <data name="ContourLabel.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textBox1.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -351,11 +354,8 @@
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 9.75pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="OpenMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+  <data name="&gt;&gt;OpenMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ContourColorButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -432,11 +432,14 @@
   <data name="Paint_Panel.Size" type="System.Drawing.Size, System.Drawing">
     <value>983, 500</value>
   </data>
-  <data name="&gt;&gt;ClearButton.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="textBox2.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
     <value>English</value>
+  </data>
+  <data name="&gt;&gt;ClearButton.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="ThiknesscomboBox.Items1" xml:space="preserve">
     <value>2</value>
@@ -467,6 +470,9 @@
   </data>
   <data name="ContourLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Paint_Panel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -504,8 +510,8 @@
   <data name="textBox6.Location" type="System.Drawing.Point, System.Drawing">
     <value>328, 572</value>
   </data>
-  <data name="textBox2.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="Draw_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 38</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -522,8 +528,8 @@
   <data name="&gt;&gt;changePanelColorToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Figure_comboBox.Items5" xml:space="preserve">
-    <value>Rectangle</value>
+  <data name="&gt;&gt;menu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ContourColorButton.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -537,6 +543,12 @@
   <data name="label1.Text" xml:space="preserve">
     <value>X1</value>
   </data>
+  <data name="&gt;&gt;ThiknessLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ThiknesscomboBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;textBox8.Name" xml:space="preserve">
     <value>textBox8</value>
   </data>
@@ -545,9 +557,6 @@
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;saveToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -558,14 +567,17 @@
   <data name="&gt;&gt;BrushColorButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;textBox5.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;FigureslistBox.Name" xml:space="preserve">
-    <value>FigureslistBox</value>
-  </data>
   <data name="&gt;&gt;Draw_button.Name" xml:space="preserve">
     <value>Draw_button</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="&gt;&gt;BrushLabel.Name" xml:space="preserve">
     <value>BrushLabel</value>
@@ -603,9 +615,6 @@
   <data name="&gt;&gt;BrushLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelColorDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 15</value>
   </data>
@@ -642,9 +651,6 @@
   <data name="ThiknessLabel.Text" xml:space="preserve">
     <value>Thikness</value>
   </data>
-  <data name="Draw_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 38</value>
-  </data>
   <data name="menu.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -654,8 +660,8 @@
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;textBox5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="FigureslistBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 9pt</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -675,8 +681,8 @@
   <data name="textBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;ThiknesscomboBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;PanelColorDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBox6.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -716,6 +722,9 @@
   </data>
   <data name="textBox3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 9.75pt</value>
+  </data>
+  <data name="ThiknessLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -768,9 +777,6 @@
   <data name="Figure_comboBox.Items1" xml:space="preserve">
     <value>Circle</value>
   </data>
-  <data name="&gt;&gt;Figure_comboBox.ZOrder" xml:space="preserve">
-    <value>26</value>
-  </data>
   <data name="&gt;&gt;textBox8.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -795,9 +801,6 @@
   <data name="ThiknessLabel.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
-  <data name="&gt;&gt;OpenMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 15</value>
   </data>
@@ -810,17 +813,14 @@
   <data name="&gt;&gt;textBox7.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="ThiknesscomboBox.Items2" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;changePanelColorToolStripMenuItem1.Name" xml:space="preserve">
     <value>changePanelColorToolStripMenuItem1</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Y3</value>
   </data>
-  <data name="ThiknessLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="saveToolStripMenuItem.Text" xml:space="preserve">
     <value>Save</value>
@@ -828,8 +828,8 @@
   <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="&gt;&gt;Figure_comboBox.ZOrder" xml:space="preserve">
+    <value>26</value>
   </data>
   <data name="Figure_comboBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -873,11 +873,14 @@
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 519</value>
   </data>
   <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BrushLabel.Text" xml:space="preserve">
+    <value>Brush Color</value>
   </data>
   <data name="ContourLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 9.75pt, style=Bold</value>
@@ -885,11 +888,14 @@
   <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 22</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="ThiknesscomboBox.Items2" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
     <value>languageToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>22</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>227, 544</value>
@@ -900,11 +906,8 @@
   <data name="&gt;&gt;FigureslistBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="FigureslistBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 9pt</value>
-  </data>
-  <data name="&gt;&gt;ThiknessLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BrushLabel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -915,11 +918,11 @@
   <data name="frenchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
   </data>
+  <data name="&gt;&gt;SaveMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="textBox8.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -984,14 +987,8 @@
   <data name="&gt;&gt;Figure_comboBox.Name" xml:space="preserve">
     <value>Figure_comboBox</value>
   </data>
-  <data name="Draw_button.Text" xml:space="preserve">
-    <value>Draw</value>
-  </data>
   <data name="&gt;&gt;BrushLabel.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="&gt;&gt;label8.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1053,6 +1050,9 @@
   <data name="BrushLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>526, 516</value>
   </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
@@ -1082,9 +1082,6 @@
   </metadata>
   <metadata name="PanelColorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>694, 18</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>fr-FR</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
