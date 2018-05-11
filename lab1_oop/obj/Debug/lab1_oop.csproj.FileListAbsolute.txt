@@ -16,3 +16,11 @@ C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bi
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\RectanglePlugin.dll
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\RectanglePlugin.pdb
 C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\lab1_oop.SaveConfig.resources
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\ru-RU\lab1_oop.resources.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\lab1_oop.Painter.ru-RU.resources
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\ru-RU\lab1_oop.resources.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\lab1_oop.SaveConfig.ru-RU.resources
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\bin\Debug\fr-FR\lab1_oop.resources.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\lab1_oop.Painter.fr-FR.resources
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\fr-FR\lab1_oop.resources.dll
+C:\Users\Eugene\Desktop\meh\4 семестр\ООТПиСП\lab1_oop\lab1_oop\obj\Debug\lab1_oop.SaveConfig.fr-FR.resources

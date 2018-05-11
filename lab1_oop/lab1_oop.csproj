@@ -69,7 +69,13 @@
     </Compile>
     <Compile Include="Serialization.cs" />
     <Compile Include="Triangle.cs" />
+    <EmbeddedResource Include="Painter.fr-FR.resx">
+      <DependentUpon>Painter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Painter.resx">
+      <DependentUpon>Painter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Painter.ru-RU.resx">
       <DependentUpon>Painter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -81,7 +87,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SaveConfig.fr-FR.resx">
+      <DependentUpon>SaveConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SaveConfig.resx">
+      <DependentUpon>SaveConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveConfig.ru-RU.resx">
       <DependentUpon>SaveConfig.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

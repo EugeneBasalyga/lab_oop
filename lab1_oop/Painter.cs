@@ -8,7 +8,9 @@ using System.Xml;
 using System.Text;
 using System.Linq;
 using System.Collections;
-
+using System.Globalization;
+using System.Threading;
+using System.ComponentModel;
 
 namespace lab1_oop
 {
@@ -19,7 +21,9 @@ namespace lab1_oop
         protected readonly List<Point> points = new List<Point>();
         protected readonly List<float> ThiknessList = new List<float>();
         Serialization Picture = new Serialization();
-        public SaveConfig frm = new SaveConfig();
+        //public SaveConfig frm = new SaveConfig();
+        public string applanguagestr;
+
 
         private void Draw_button_Click(object sender, EventArgs e)
         {
@@ -42,7 +46,42 @@ namespace lab1_oop
 
         public Painter()
         {
+
+            XmlDocument document = new XmlDocument();
+            try
+            {
+                document.Load("config.xml");
+                XmlElement element = document.DocumentElement;
+                XmlNode node = element["Lang"];
+
+                applanguagestr = (node["AppLang"].InnerText);
+
+                document.Save("config.xml");
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(applanguagestr);
+            }
+            catch
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                applanguagestr = "en-US";
+            }
+
+
             InitializeComponent();
+
+            string colorstr;
+            try
+            {
+                document.Load("config.xml");
+                XmlElement element = document.DocumentElement;
+                XmlNode node = element["Panel"];
+                colorstr = node["ArgbColor"].InnerText;
+                Paint_Panel.BackColor = Color.FromArgb(Int32.Parse(colorstr));
+                document.Save("config.xml");
+            }
+            catch
+            {
+
+            }
 
             tbList.Add(textBox1);
             tbList.Add(textBox8);
@@ -60,48 +99,6 @@ namespace lab1_oop
             ThiknessList.Add(10);
             ThiknessList.Add(12);
 
-
-            XmlDocument document = new XmlDocument();
-            try
-            {
-                document.Load("config.xml");
-                XmlElement element = document.DocumentElement;
-                XmlNode node = element["Panel"];
-                XmlNode node2 = element["Language"];
-                string colorstr;
-                colorstr = (node["ArgbColor"].InnerText);
-                Paint_Panel.BackColor = Color.FromArgb(Int32.Parse(colorstr));
-
-                SaveMenuItem.Text = (node2["savemenuitem"].InnerText);
-                OpenMenuItem.Text = (node2["openmenuitem"].InnerText);
-                settingsToolStripMenuItem.Text = (node2["settingsToolStripMenuItem"].InnerText);
-                changePanelColorToolStripMenuItem1.Text = (node2["changepanelcolortoolstripmenuItem1"].InnerText);
-                languageToolStripMenuItem.Text = (node2["languagetoolstripmenuitem"].InnerText);
-                russianToolStripMenuItem.Text = (node2["russiantoolstripmenuitem"].InnerText);
-                englishToolStripMenuItem.Text = (node2["englishtoolstripmenuitem"].InnerText);
-                Draw_button.Text = (node2["draw_button"].InnerText);
-                ClearButton.Text = (node2["clearButton"].InnerText);
-                Figure_comboBox.Items.Add((node2["line"].InnerText));
-                Figure_comboBox.Items.Add((node2["circle"].InnerText));
-                Figure_comboBox.Items.Add((node2["triangle"].InnerText));
-                Figure_comboBox.Items.Add((node2["quadrangle"].InnerText));
-                Figure_comboBox.Items.Add((node2["ellipse"].InnerText));
-                Figure_comboBox.Items.Add((node2["rectangle"].InnerText));
-                ThiknessLabel.Text = (node2["thiknesslabel"].InnerText);
-                BrushLabel.Text = (node2["brushlabel"].InnerText);
-                ContourLabel.Text = (node2["contourlabel"].InnerText);
-
-                frm.LoadText(node2);
-                //document.DocumentElement.ParentNode.RemoveAll();
-                document.Save("config.xml");
-            }
-            catch
-            {
-                foreach (var f in FigureList.figures)
-                {
-                    Figure_comboBox.Items.Add(f.GetType().Name);
-                }
-            }
         }
 
         private void Paint_Panel_Paint(object sender, PaintEventArgs e)
@@ -115,6 +112,7 @@ namespace lab1_oop
 
         private void Painter_Load(object sender, EventArgs e)
         {
+
             ThiknesscomboBox.SelectedItem = ThiknesscomboBox.Items[0];
             ContourcolorDialog.Color = Color.Black;
             ContourColorButton.BackColor = ContourcolorDialog.Color;
@@ -130,7 +128,6 @@ namespace lab1_oop
                 foreach (var p in plugins)
                 {
                     FigureList.figures.Add(p);
-                    Figure_comboBox.Items.Add(p.GetType().Name);
                 }
             }
             if (Figure_comboBox.Items.Count > 0)
@@ -269,153 +266,121 @@ namespace lab1_oop
 
         private void Painter_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (frm.ShowDialog() == DialogResult.OK)
+            XmlDocument document = new XmlDocument();
+            try
             {
-                XmlDocument document = new XmlDocument();
-                try
-                {
-                    document.Load("config.xml");
-                    //document.RemoveAll();
-                    XmlElement element = document.DocumentElement;
-                    XmlNode node = element["head"];
-                    node.RemoveAll();
-                }
-                catch
-                {
-                    XmlTextWriter textWritter = new XmlTextWriter("config.xml", Encoding.UTF8);
-                    textWritter.WriteStartDocument();
-                    textWritter.WriteStartElement("head");
-                    textWritter.WriteEndElement();
-                    textWritter.Close();
-                    document.Load("config.xml");
-                }
-
-                XmlNode Panel = document.CreateElement("Panel");
-                document.DocumentElement.AppendChild(Panel); // указываем родителя
-                XmlAttribute attribute1 = document.CreateAttribute("number"); // создаём атрибут
-                attribute1.Value = "1"; // устанавливаем значение атрибута
-                Panel.Attributes.Append(attribute1); // добавляем атрибут
-
-                XmlNode subElement1 = document.CreateElement("ArgbColor"); // даём имя
-                subElement1.InnerText = Paint_Panel.BackColor.ToArgb().ToString(); // и значение
-                Panel.AppendChild(subElement1); // и указываем кому принадлежит
-
-
-                XmlNode lang = document.CreateElement("Language");
-                document.DocumentElement.AppendChild(lang);
-                XmlAttribute attribute2 = document.CreateAttribute("number");
-                attribute2.Value = "1";
-                lang.Attributes.Append(attribute2);
-
-                XmlNode savemenuitem = document.CreateElement("savemenuitem");
-                savemenuitem.InnerText = SaveMenuItem.Text;
-                lang.AppendChild(savemenuitem);
-                XmlNode openmenuitem = document.CreateElement("openmenuitem");
-                openmenuitem.InnerText = OpenMenuItem.Text;
-                lang.AppendChild(openmenuitem);
-                XmlNode settingstoolstripmenuitem = document.CreateElement("settingsToolStripMenuItem");
-                settingstoolstripmenuitem.InnerText = settingsToolStripMenuItem.Text;
-                lang.AppendChild(settingstoolstripmenuitem);
-                XmlNode changepanelcolortoolstripmenuItem1 = document.CreateElement("changepanelcolortoolstripmenuItem1");
-                changepanelcolortoolstripmenuItem1.InnerText = changePanelColorToolStripMenuItem1.Text;
-                lang.AppendChild(changepanelcolortoolstripmenuItem1);
-                XmlNode languagetoolstripmenuitem = document.CreateElement("languagetoolstripmenuitem");
-                languagetoolstripmenuitem.InnerText = languageToolStripMenuItem.Text;
-                lang.AppendChild(languagetoolstripmenuitem);
-                XmlNode russiantoolstripmenuitem = document.CreateElement("russiantoolstripmenuitem");
-                russiantoolstripmenuitem.InnerText = russianToolStripMenuItem.Text;
-                lang.AppendChild(russiantoolstripmenuitem);
-                XmlNode englishtoolstripmenuitem = document.CreateElement("englishtoolstripmenuitem");
-                englishtoolstripmenuitem.InnerText = englishToolStripMenuItem.Text;
-                lang.AppendChild(englishtoolstripmenuitem);
-                XmlNode draw_button = document.CreateElement("draw_button");
-                draw_button.InnerText = Draw_button.Text;
-                lang.AppendChild(draw_button);
-                XmlNode clearButton = document.CreateElement("clearButton");
-                clearButton.InnerText = ClearButton.Text;
-                lang.AppendChild(clearButton);
-                XmlNode line = document.CreateElement("line");
-                line.InnerText = Figure_comboBox.Items[0].ToString();
-                lang.AppendChild(line);
-                XmlNode circle = document.CreateElement("circle");
-                circle.InnerText = Figure_comboBox.Items[1].ToString();
-                lang.AppendChild(circle);
-                XmlNode triangle = document.CreateElement("triangle");
-                triangle.InnerText = Figure_comboBox.Items[2].ToString();
-                lang.AppendChild(triangle);
-                XmlNode quadrangle = document.CreateElement("quadrangle");
-                quadrangle.InnerText = Figure_comboBox.Items[3].ToString();
-                lang.AppendChild(quadrangle);
-                XmlNode ellipse = document.CreateElement("ellipse");
-                ellipse.InnerText = Figure_comboBox.Items[4].ToString();
-                lang.AppendChild(ellipse);
-                XmlNode rectangle = document.CreateElement("rectangle");
-                rectangle.InnerText = Figure_comboBox.Items[5].ToString();
-                lang.AppendChild(rectangle);
-                XmlNode thiknesslabel = document.CreateElement("thiknesslabel");
-                thiknesslabel.InnerText = ThiknessLabel.Text;
-                lang.AppendChild(thiknesslabel);
-                XmlNode contourlabel = document.CreateElement("contourlabel");
-                contourlabel.InnerText = ContourLabel.Text;
-                lang.AppendChild(contourlabel);
-                XmlNode brushlabel = document.CreateElement("brushlabel");
-                brushlabel.InnerText = BrushLabel.Text;
-                lang.AppendChild(brushlabel);
-
-                frm.SaveText(document, lang);
-                document.Save("config.xml");
+                document.Load("config.xml");
+                XmlElement element = document.DocumentElement;
+                XmlNode node = element["head"];
+                node.RemoveAll();
             }
+            catch
+            {
+                XmlTextWriter textWritter = new XmlTextWriter("config.xml", Encoding.UTF8);
+                textWritter.WriteStartDocument();
+                textWritter.WriteStartElement("head");
+                textWritter.WriteEndElement();
+                textWritter.Close();
+                document.Load("config.xml");
+            }
+
+            XmlNode Lang = document.CreateElement("Lang");
+            document.DocumentElement.AppendChild(Lang);
+            XmlAttribute attribute1 = document.CreateAttribute("number");
+            attribute1.Value = "1";
+            Lang.Attributes.Append(attribute1);
+
+            XmlNode AppLang = document.CreateElement("AppLang");
+            AppLang.InnerText = applanguagestr;
+            Lang.AppendChild(AppLang);
+
+            XmlNode Panel = document.CreateElement("Panel");
+            document.DocumentElement.AppendChild(Panel); // указываем родителя
+            XmlAttribute attribute2 = document.CreateAttribute("number"); // создаём атрибут
+            attribute2.Value = "1"; // устанавливаем значение атрибута
+            Panel.Attributes.Append(attribute2); // добавляем атрибут
+
+            XmlNode ArgbColor = document.CreateElement("ArgbColor"); // даём имя
+            ArgbColor.InnerText = Paint_Panel.BackColor.ToArgb().ToString(); // и значение
+            Panel.AppendChild(ArgbColor); // и указываем кому принадлежит
+
+            document.Save("config.xml");
         }
 
         private void russianToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveMenuItem.Text = "Сохранить как";
-            OpenMenuItem.Text = "Открыть";
-            settingsToolStripMenuItem.Text = "Настройки";
-            changePanelColorToolStripMenuItem1.Text = "Изменить цвет панели";
-            languageToolStripMenuItem.Text = "Язык";
-            russianToolStripMenuItem.Text = "Русский";
-            englishToolStripMenuItem.Text = "Английский";
-            Draw_button.Text = "Рисовать";
-            ClearButton.Text = "Очистить";
-            Figure_comboBox.Items[0] = "Линия";
-            Figure_comboBox.Items[1] = "Круг";
-            Figure_comboBox.Items[2] = "Треугольник";
-            Figure_comboBox.Items[3] = "Четырёхугольник";
-            Figure_comboBox.Items[4] = "Эллипс";
-            Figure_comboBox.Items[5] = "Прямоугольник";
-            Figure_comboBox.SelectedItem = Figure_comboBox.Items[0];
-            ThiknessLabel.Text = "Толщина";
-            ContourLabel.Text = "Цвет контура";
-            BrushLabel.Text = "Цвет кисти";
-            frm.ChangeTextToRussian();
+            SaveConfig frm = new SaveConfig(applanguagestr);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                applanguagestr = "ru-RU";
+                Application.Restart();
+            }
+
+
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveMenuItem.Text = "Save as";
-            OpenMenuItem.Text = "Open";
-            settingsToolStripMenuItem.Text = "Settings";
-            changePanelColorToolStripMenuItem1.Text = "Change Panel Color";
-            languageToolStripMenuItem.Text = "Language";
-            russianToolStripMenuItem.Text = "Russian";
-            englishToolStripMenuItem.Text = "English";
-            Draw_button.Text = "Draw";
-            ClearButton.Text = "Clean";
-            int count = Figure_comboBox.Items.Count - 1;
-            for (int i = 0; i <= count; i++)
+            SaveConfig frm = new SaveConfig(applanguagestr);
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                Figure_comboBox.Items.RemoveAt(0);
+                applanguagestr = "en-US";
+                Application.Restart();
             }
-            foreach (var f in FigureList.figures)
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            XmlDocument document = new XmlDocument();
+            try
             {
-                Figure_comboBox.Items.Add(f.GetType().Name);
+                document.Load("config.xml");
+                XmlElement element = document.DocumentElement;
+                XmlNode node = element["head"];
+                node.RemoveAll();
             }
-            Figure_comboBox.SelectedItem = Figure_comboBox.Items[0];
-            ThiknessLabel.Text = "Thikness";
-            ContourLabel.Text = "Contour color";
-            BrushLabel.Text = "Brush color";
-            frm.ChangeTextToEnglish();
+            catch
+            {
+                XmlTextWriter textWritter = new XmlTextWriter("config.xml", Encoding.UTF8);
+                textWritter.WriteStartDocument();
+                textWritter.WriteStartElement("head");
+                textWritter.WriteEndElement();
+                textWritter.Close();
+                document.Load("config.xml");
+            }
+
+            XmlNode Lang = document.CreateElement("Lang");
+            document.DocumentElement.AppendChild(Lang);
+            XmlAttribute attribute1 = document.CreateAttribute("number");
+            attribute1.Value = "1";
+            Lang.Attributes.Append(attribute1);
+
+            XmlNode AppLang = document.CreateElement("AppLang");
+            AppLang.InnerText = applanguagestr;
+            Lang.AppendChild(AppLang);
+
+            XmlNode Panel = document.CreateElement("Panel");
+            document.DocumentElement.AppendChild(Panel); 
+            XmlAttribute attribute2 = document.CreateAttribute("number");
+            attribute2.Value = "1"; 
+            Panel.Attributes.Append(attribute2); 
+
+            XmlNode ArgbColor = document.CreateElement("ArgbColor"); 
+            ArgbColor.InnerText = Paint_Panel.BackColor.ToArgb().ToString(); 
+            Panel.AppendChild(ArgbColor);
+
+            document.Save("config.xml");
+        }
+
+        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveConfig frm = new SaveConfig(applanguagestr);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                applanguagestr = "fr-Fr";
+                Application.Restart();
+            }
         }
     }
 }
