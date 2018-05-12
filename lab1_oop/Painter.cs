@@ -24,6 +24,7 @@ namespace lab1_oop
         //public SaveConfig frm = new SaveConfig();
         public string applanguagestr;
 
+        bool IsRestart = false;
 
         private void Draw_button_Click(object sender, EventArgs e)
         {
@@ -263,8 +264,7 @@ namespace lab1_oop
             }
         }
 
-
-        private void Painter_FormClosing(object sender, FormClosingEventArgs e)
+        public void SaveToXML()
         {
             XmlDocument document = new XmlDocument();
             try
@@ -306,11 +306,20 @@ namespace lab1_oop
             document.Save("config.xml");
         }
 
+        private void Painter_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsRestart)
+            {
+                SaveToXML();
+            }
+        }
+
         private void russianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveConfig frm = new SaveConfig(applanguagestr);
             if (frm.ShowDialog() == DialogResult.OK)
             {
+                IsRestart = true;
                 applanguagestr = "ru-RU";
                 Application.Restart();
             }
@@ -323,6 +332,7 @@ namespace lab1_oop
             SaveConfig frm = new SaveConfig(applanguagestr);
             if (frm.ShowDialog() == DialogResult.OK)
             {
+                IsRestart = true;
                 applanguagestr = "en-US";
                 Application.Restart();
             }
@@ -331,44 +341,7 @@ namespace lab1_oop
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            XmlDocument document = new XmlDocument();
-            try
-            {
-                document.Load("config.xml");
-                XmlElement element = document.DocumentElement;
-                element.RemoveAll();
-            }
-            catch
-            {
-                XmlTextWriter textWritter = new XmlTextWriter("config.xml", Encoding.UTF8);
-                textWritter.WriteStartDocument();
-                textWritter.WriteStartElement("head");
-                textWritter.WriteEndElement();
-                textWritter.Close();
-                document.Load("config.xml");
-            }
-
-            XmlNode Lang = document.CreateElement("Lang");
-            document.DocumentElement.AppendChild(Lang);
-            XmlAttribute attribute1 = document.CreateAttribute("number");
-            attribute1.Value = "1";
-            Lang.Attributes.Append(attribute1);
-
-            XmlNode AppLang = document.CreateElement("AppLang");
-            AppLang.InnerText = applanguagestr;
-            Lang.AppendChild(AppLang);
-
-            XmlNode Panel = document.CreateElement("Panel");
-            document.DocumentElement.AppendChild(Panel); 
-            XmlAttribute attribute2 = document.CreateAttribute("number");
-            attribute2.Value = "1"; 
-            Panel.Attributes.Append(attribute2); 
-
-            XmlNode ArgbColor = document.CreateElement("ArgbColor"); 
-            ArgbColor.InnerText = Paint_Panel.BackColor.ToArgb().ToString(); 
-            Panel.AppendChild(ArgbColor);
-
-            document.Save("config.xml");
+            SaveToXML();
         }
 
         private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -376,6 +349,7 @@ namespace lab1_oop
             SaveConfig frm = new SaveConfig(applanguagestr);
             if (frm.ShowDialog() == DialogResult.OK)
             {
+                IsRestart = true;
                 applanguagestr = "fr-Fr";
                 Application.Restart();
             }
