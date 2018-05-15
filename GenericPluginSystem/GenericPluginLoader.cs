@@ -6,7 +6,7 @@ using Drawable;
 
 namespace GenericPluginSystem
 {
-    public static class GenericPluginLoader<T> where T : Figure
+    public static class GenericPluginLoader<T> where T : Figure 
     {
         public static ICollection<T> LoadPlugins(string path)
         {

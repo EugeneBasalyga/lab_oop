@@ -132,7 +132,10 @@ namespace lab1_oop
                 }
             }
             if (Figure_comboBox.Items.Count > 0)
+            {
                 Figure_comboBox.SelectedItem = Figure_comboBox.Items[0];
+            }
+
         }
 
         private void Paint_Panel_MouseClick(object sender, MouseEventArgs e)
@@ -285,9 +288,6 @@ namespace lab1_oop
 
             XmlNode Lang = document.CreateElement("Lang");
             document.DocumentElement.AppendChild(Lang);
-            XmlAttribute attribute1 = document.CreateAttribute("number");
-            attribute1.Value = "1";
-            Lang.Attributes.Append(attribute1);
 
             XmlNode AppLang = document.CreateElement("AppLang");
             AppLang.InnerText = applanguagestr;
@@ -295,9 +295,6 @@ namespace lab1_oop
 
             XmlNode Panel = document.CreateElement("Panel");
             document.DocumentElement.AppendChild(Panel); // указываем родителя
-            XmlAttribute attribute2 = document.CreateAttribute("number"); // создаём атрибут
-            attribute2.Value = "1"; // устанавливаем значение атрибута
-            Panel.Attributes.Append(attribute2); // добавляем атрибут
 
             XmlNode ArgbColor = document.CreateElement("ArgbColor"); // даём имя
             ArgbColor.InnerText = Paint_Panel.BackColor.ToArgb().ToString(); // и значение
