@@ -30,17 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Painter));
             this.Paint_Panel = new System.Windows.Forms.Panel();
-            this.menu = new System.Windows.Forms.MenuStrip();
-            this.SaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.OpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePanelColorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveYourOwnFigureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Figure_comboBox = new System.Windows.Forms.ComboBox();
             this.Draw_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,7 +61,17 @@
             this.BrushColorButton = new System.Windows.Forms.Button();
             this.BrushColorDialog = new System.Windows.Forms.ColorDialog();
             this.PanelColorDialog = new System.Windows.Forms.ColorDialog();
-            this.Paint_Panel.SuspendLayout();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.SaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePanelColorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveYourOwnFigureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,88 +79,10 @@
             // 
             this.Paint_Panel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Paint_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Paint_Panel.Controls.Add(this.menu);
             resources.ApplyResources(this.Paint_Panel, "Paint_Panel");
             this.Paint_Panel.Name = "Paint_Panel";
             this.Paint_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Paint_Panel_Paint);
             this.Paint_Panel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Paint_Panel_MouseClick);
-            // 
-            // menu
-            // 
-            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SaveMenuItem,
-            this.OpenMenuItem,
-            this.settingsToolStripMenuItem,
-            this.saveYourOwnFigureToolStripMenuItem});
-            resources.ApplyResources(this.menu, "menu");
-            this.menu.Name = "menu";
-            this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            // 
-            // SaveMenuItem
-            // 
-            this.SaveMenuItem.Name = "SaveMenuItem";
-            resources.ApplyResources(this.SaveMenuItem, "SaveMenuItem");
-            this.SaveMenuItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
-            // 
-            // OpenMenuItem
-            // 
-            this.OpenMenuItem.Name = "OpenMenuItem";
-            resources.ApplyResources(this.OpenMenuItem, "OpenMenuItem");
-            this.OpenMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changePanelColorToolStripMenuItem1,
-            this.languageToolStripMenuItem,
-            this.saveToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
-            // 
-            // changePanelColorToolStripMenuItem1
-            // 
-            this.changePanelColorToolStripMenuItem1.Name = "changePanelColorToolStripMenuItem1";
-            resources.ApplyResources(this.changePanelColorToolStripMenuItem1, "changePanelColorToolStripMenuItem1");
-            this.changePanelColorToolStripMenuItem1.Click += new System.EventHandler(this.changePanelColorToolStripMenuItem1_Click);
-            // 
-            // languageToolStripMenuItem
-            // 
-            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.englishToolStripMenuItem,
-            this.russianToolStripMenuItem,
-            this.frenchToolStripMenuItem});
-            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
-            // 
-            // englishToolStripMenuItem
-            // 
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
-            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
-            // 
-            // russianToolStripMenuItem
-            // 
-            this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
-            resources.ApplyResources(this.russianToolStripMenuItem, "russianToolStripMenuItem");
-            this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
-            // 
-            // frenchToolStripMenuItem
-            // 
-            this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
-            resources.ApplyResources(this.frenchToolStripMenuItem, "frenchToolStripMenuItem");
-            this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // saveYourOwnFigureToolStripMenuItem
-            // 
-            this.saveYourOwnFigureToolStripMenuItem.Name = "saveYourOwnFigureToolStripMenuItem";
-            resources.ApplyResources(this.saveYourOwnFigureToolStripMenuItem, "saveYourOwnFigureToolStripMenuItem");
-            this.saveYourOwnFigureToolStripMenuItem.Click += new System.EventHandler(this.saveYourOwnFigureToolStripMenuItem_Click);
             // 
             // Figure_comboBox
             // 
@@ -338,10 +259,88 @@
             this.BrushColorButton.UseVisualStyleBackColor = true;
             this.BrushColorButton.Click += new System.EventHandler(this.BrushColorButton_Click);
             // 
+            // menu
+            // 
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveMenuItem,
+            this.OpenMenuItem,
+            this.settingsToolStripMenuItem,
+            this.saveYourOwnFigureToolStripMenuItem});
+            resources.ApplyResources(this.menu, "menu");
+            this.menu.Name = "menu";
+            this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            // 
+            // SaveMenuItem
+            // 
+            this.SaveMenuItem.Name = "SaveMenuItem";
+            resources.ApplyResources(this.SaveMenuItem, "SaveMenuItem");
+            this.SaveMenuItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
+            // 
+            // OpenMenuItem
+            // 
+            this.OpenMenuItem.Name = "OpenMenuItem";
+            resources.ApplyResources(this.OpenMenuItem, "OpenMenuItem");
+            this.OpenMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePanelColorToolStripMenuItem1,
+            this.languageToolStripMenuItem,
+            this.saveToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            // 
+            // changePanelColorToolStripMenuItem1
+            // 
+            this.changePanelColorToolStripMenuItem1.Name = "changePanelColorToolStripMenuItem1";
+            resources.ApplyResources(this.changePanelColorToolStripMenuItem1, "changePanelColorToolStripMenuItem1");
+            this.changePanelColorToolStripMenuItem1.Click += new System.EventHandler(this.changePanelColorToolStripMenuItem1_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.russianToolStripMenuItem,
+            this.frenchToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // russianToolStripMenuItem
+            // 
+            this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
+            resources.ApplyResources(this.russianToolStripMenuItem, "russianToolStripMenuItem");
+            this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
+            // 
+            // frenchToolStripMenuItem
+            // 
+            this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
+            resources.ApplyResources(this.frenchToolStripMenuItem, "frenchToolStripMenuItem");
+            this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveYourOwnFigureToolStripMenuItem
+            // 
+            this.saveYourOwnFigureToolStripMenuItem.Name = "saveYourOwnFigureToolStripMenuItem";
+            resources.ApplyResources(this.saveYourOwnFigureToolStripMenuItem, "saveYourOwnFigureToolStripMenuItem");
+            this.saveYourOwnFigureToolStripMenuItem.Click += new System.EventHandler(this.saveYourOwnFigureToolStripMenuItem_Click);
+            // 
             // Painter
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.menu);
             this.Controls.Add(this.Paint_Panel);
             this.Controls.Add(this.BrushColorButton);
             this.Controls.Add(this.BrushLabel);
@@ -370,13 +369,10 @@
             this.Controls.Add(this.Draw_button);
             this.Controls.Add(this.Figure_comboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menu;
             this.Name = "Painter";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Painter_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Painter_FormClosed);
             this.Load += new System.EventHandler(this.Painter_Load);
-            this.Paint_Panel.ResumeLayout(false);
-            this.Paint_Panel.PerformLayout();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);
@@ -407,9 +403,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label ContourLabel;
-        private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem SaveMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ListBox FigureslistBox;
@@ -420,14 +413,17 @@
         private System.Windows.Forms.Label BrushLabel;
         private System.Windows.Forms.Button BrushColorButton;
         private System.Windows.Forms.ColorDialog BrushColorDialog;
+        private System.Windows.Forms.ColorDialog PanelColorDialog;
+        private System.Windows.Forms.MenuStrip menu;
+        private System.Windows.Forms.ToolStripMenuItem SaveMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePanelColorToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
-        private System.Windows.Forms.ColorDialog PanelColorDialog;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem frenchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveYourOwnFigureToolStripMenuItem;
     }
 }

@@ -52,7 +52,9 @@ namespace lab1_oop
                         fig.Points[i] = point;
                     }
                 }
-                Picture.Serialize(new List<Figure> { { uf } }, "CustomFigures.dat");
+                var l = Picture.Deserialize("CustomFigures.dat");
+                l.Add(uf);
+                Picture.Serialize(l, "CustomFigures.dat");
             }
             else
                 MessageBox.Show("Figure count must be more than 2");

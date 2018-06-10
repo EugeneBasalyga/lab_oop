@@ -206,7 +206,7 @@ namespace lab1_oop
                     drawList = new List<Figure>();
                 for (var i = 0; i < drawList.Count; i++)
                 {
-                    tmp = drawList[i].GetType().Name;
+                    tmp = drawList[i].GetName();
                     FigureslistBox.Items.Add(tmp);
                 }
                 Paint_Panel.Invalidate();
