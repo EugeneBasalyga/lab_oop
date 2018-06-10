@@ -51,6 +51,11 @@ namespace RectanglePlugin
                     TopLeft.Y = BottomRight.Y;
                     BottomRight.Y = tmp;
                 }
+                Points = new List<Point>();
+                foreach (var point in points)
+                {
+                    Points.Add(point);
+                }
             }
         }
 

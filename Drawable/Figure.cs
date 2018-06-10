@@ -12,10 +12,16 @@ namespace Drawable
         public Color Color { get; set; }
         public Color BrushColor { get; set; }
         public float Thikness { get; set; }
+        public List<Point> Points { get; set; }
 
         public abstract void Draw(Graphics graphics);
         public abstract void Draw(Graphics graphics, List<Point> points);
         public virtual int pointCount { get; }
+
+        public virtual string GetName()
+        {
+            return GetType().Name;
+        }
 
         public abstract void SetPoints(List<Point> points);
 

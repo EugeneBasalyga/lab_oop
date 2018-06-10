@@ -17,7 +17,7 @@ namespace lab1_oop
     public partial class Painter : Form
     {
         protected readonly List<TextBox> tbList = new List<TextBox>();
-        protected List<Figure> drawList = new List<Figure>();
+        public List<Figure> drawList = new List<Figure>();
         protected readonly List<Point> points = new List<Point>();
         protected readonly List<float> ThiknessList = new List<float>();
         Serialization Picture = new Serialization();
@@ -35,7 +35,7 @@ namespace lab1_oop
                 drawList.Remove(drawList[drawList.Count - 1]);
             else
             {
-                tmp = drawList[drawList.Count - 1].GetType().Name;
+                tmp = drawList[drawList.Count - 1].GetName();
                 FigureslistBox.Items.Add(tmp);
             }
 
@@ -129,8 +129,25 @@ namespace lab1_oop
                 foreach (var p in plugins)
                 {
                     FigureList.figures.Add(p);
+                    //Figure_comboBox.Items.Add()
                 }
             }
+            //var house = new UserFigure("house");
+            //house.UserFigureList.Add(new CompositFigure(new List<Point> { new Point(0, 100), new Point(100, 0), new Point(200, 100) }) { Figure = new Triangle() });
+            //house.UserFigureList.Add(new CompositFigure(new List<Point> { new Point(100, 50), new Point(120, 50) }) { Figure = new Circle() });
+            //Picture.Serialize(new List<Figure> { { house } }, "house.dat");
+
+            var list = Picture.Deserialize("CustomFigures.dat");
+            if (list != null)
+            {
+                foreach (var uf in list)
+                {
+                    Figure_comboBox.Items.Add(uf.GetName());
+                    FigureList.figures.Add(uf);
+                }
+            }
+            //Figure_comboBox.Items.Add(house.GetName());
+            //FigureList.figures.Add(house);
             if (Figure_comboBox.Items.Count > 0)
             {
                 Figure_comboBox.SelectedItem = Figure_comboBox.Items[0];
@@ -349,6 +366,16 @@ namespace lab1_oop
                 IsRestart = true;
                 applanguagestr = "fr-Fr";
                 Application.Restart();
+            }
+        }
+
+        private void saveYourOwnFigureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserFigureForm frm = new UserFigureForm(drawList);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                FigureList.figures.Add(frm.uf);
+                Figure_comboBox.Items.Add(frm.uf.GetName());
             }
         }
     }

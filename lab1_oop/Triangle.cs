@@ -40,6 +40,11 @@ namespace lab1_oop
                 SecDot = points[1];
                 ThirdDot = points[2];
             }
+            Points = new List<Point>();
+            foreach (var point in points)
+            {
+                Points.Add(point);
+            }
         }
 
         public override void Draw(Graphics graphics, List<Point> points)

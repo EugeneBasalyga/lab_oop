@@ -37,10 +37,14 @@ namespace lab1_oop
             BinaryFormatter serializer = new BinaryFormatter();
 
 
-            FileStream fs = new FileStream(FileName, FileMode.Open);
+            FileStream fs = null;
             try
             {
-                DeserializedFigures = (List<Figure>)(serializer.Deserialize(fs));
+                if (File.Exists(FileName))
+                {
+                    fs = new FileStream(FileName, FileMode.Open);
+                    DeserializedFigures = (List<Figure>)(serializer.Deserialize(fs));
+                }
             }
             catch
             {
@@ -48,7 +52,8 @@ namespace lab1_oop
             }
             finally
             {
-                fs.Close();
+                if(fs != null)
+                    fs.Close();
             }
             return DeserializedFigures;
         }

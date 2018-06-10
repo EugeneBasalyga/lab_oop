@@ -40,6 +40,11 @@ namespace lab1_oop
                 ThirdDot = points[2];
                 FourthDot = points[3];
             }
+            Points = new List<Point>();
+            foreach (var point in points)
+            {
+                Points.Add(point);
+            }
         }
 
         public override void Draw(Graphics graphics)

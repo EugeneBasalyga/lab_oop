@@ -69,6 +69,13 @@
     </Compile>
     <Compile Include="Serialization.cs" />
     <Compile Include="Triangle.cs" />
+    <Compile Include="UserFigure.cs" />
+    <Compile Include="UserFigureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserFigureForm.Designer.cs">
+      <DependentUpon>UserFigureForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Painter.fr-FR.resx">
       <DependentUpon>Painter.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SaveConfig.ru-RU.resx">
       <DependentUpon>SaveConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserFigureForm.resx">
+      <DependentUpon>UserFigureForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

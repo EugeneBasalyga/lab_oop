@@ -48,6 +48,11 @@ namespace EllipsePlugin
                     TopLeft.Y = BottomRight.Y;
                     BottomRight.Y = tmp;
                 }
+                Points = new List<Point>();
+                foreach (var point in points)
+                {
+                    Points.Add(point);
+                }
             }
         }
         public override void Draw(Graphics graphics, List<Point> points)

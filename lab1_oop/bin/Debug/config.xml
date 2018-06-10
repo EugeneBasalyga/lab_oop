@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <head>
-  <Lang version="1.0" locale="123">
-    <AppLang>en-UrghjhS</AppLang>
+  <Lang>
+    <AppLang>en-US</AppLang>
   </Lang>
   <Panel>
-    <ArgbColor>-128</ArgbColor>
+    <ArgbColor>-1</ArgbColor>
   </Panel>
 </head>
