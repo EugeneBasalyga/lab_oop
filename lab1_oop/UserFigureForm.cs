@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Drawable;
+using System.IO;
 
 namespace lab1_oop
 {
@@ -27,6 +28,7 @@ namespace lab1_oop
             if (drlist.Count >= 2)
             {
                 uf = new UserFigure(NametextBox.Text);
+                uf.Points = new List<Point>();
                 foreach (var fig in drlist)
                 {
                     uf.UserFigureList.Add(new CompositFigure(fig.Points) { Figure = fig });
@@ -52,9 +54,21 @@ namespace lab1_oop
                         fig.Points[i] = point;
                     }
                 }
-                var l = Picture.Deserialize("CustomFigures.dat");
-                l.Add(uf);
-                Picture.Serialize(l, "CustomFigures.dat");
+                foreach (var fig in uf.UserFigureList)
+                {
+                    foreach (var point in fig.Points)
+                    {
+                        uf.Points.Add(point);
+                    }
+                }
+                if (File.Exists("CustomFigures.dat"))
+                {
+                    var l = Picture.Deserialize("CustomFigures.dat");
+                    l.Add(uf);
+                    Picture.Serialize(l, "CustomFigures.dat");
+                }
+                else
+                    Picture.Serialize(new List<Figure> { { uf } }, "CustomFigures.dat");
             }
             else
                 MessageBox.Show("Figure count must be more than 2");

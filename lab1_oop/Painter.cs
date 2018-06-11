@@ -374,8 +374,14 @@ namespace lab1_oop
             UserFigureForm frm = new UserFigureForm(drawList);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                FigureList.figures.Add(frm.uf);
-                Figure_comboBox.Items.Add(frm.uf.GetName());
+                if (drawList.Count >= 2)
+                {
+                    FigureList.figures.Add(frm.uf);
+                    Figure_comboBox.Items.Add(frm.uf.GetName());
+                    FigureslistBox.Items.Clear();
+                    drawList.Clear();
+                    Paint_Panel.Invalidate();
+                }
             }
         }
     }
